@@ -25,8 +25,10 @@ const styles = StyleSheet.create(
         },
         row: {
             flexDirection: 'row',
-            padding: 15,
+            padding: 20,
             alignItems: 'center',
+            borderBottomWidth: 1,
+            borderColor: 'grey'
         },
         iconContainer: {
             backgroundColor: 'grey',

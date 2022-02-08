@@ -4,6 +4,7 @@ import {View,Text} from 'react-native';
 import styles from './styles';
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import EnTypo from 'react-native-vector-icons/Entypo';
 
 const HomeSearch = (props) => {
     return (
@@ -21,6 +22,12 @@ const HomeSearch = (props) => {
         <View style={styles.row}>
             <View style={styles.iconContainer}>
                 <AntDesign name={'clockcircle'} size={20} color={'#ffffff'}/>
+            </View>
+            <Text style={styles.destinationText}>Spin Night Club</Text>
+        </View>
+        <View style={styles.row}>
+            <View style={[styles.iconContainer,{backgroundColor: '#218cff'}]}>
+                <EnTypo name={'home'} size={20} color={'#ffffff'}/>
             </View>
             <Text style={styles.destinationText}>Spin Night Club</Text>
         </View>
