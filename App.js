@@ -10,6 +10,7 @@ import type {Node} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import HomeScreen from './src/screens/HomeScreen/index';
+import DestinationSearch from './src/screens/DestinationPage/index'
 
 import {
   SafeAreaView,
@@ -35,7 +36,7 @@ const App: () => Node = () => {
   return (
     <>
     <StatusBar barStyle='dark-content'/>
-    <HomeScreen/>
+    <DestinationSearch/>
     </>
       );
 };
