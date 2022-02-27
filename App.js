@@ -5,59 +5,21 @@
  * @format
  * @flow strict-local
  */
-import React from 'react';
-import type {Node} from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
-import HomeScreen from './src/screens/HomeScreen/index';
-import DestinationSearch from './src/screens/DestinationPage/index'
-
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-
-
-const App: () => Node = () => {
-  return (
-    <>
-    <StatusBar barStyle='dark-content'/>
-    <DestinationSearch/>
-    </>
-      );
-};
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
-export default App;
+ import React from 'react';
+ import {StatusBar} from 'react-native';
+ 
+ import SearchResults from './src/screens/SearchResults';
+ import HomeScreen from './src/screens/HomeScreen';
+ 
+ const App: () => React$Node = () => {
+   return (
+     <>
+       <StatusBar barStyle="dark-content" />
+       <HomeScreen />
+     </>
+   );
+ };
+ 
+ export default App;
+ 
