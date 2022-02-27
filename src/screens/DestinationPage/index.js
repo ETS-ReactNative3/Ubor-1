@@ -1,32 +1,57 @@
-import React from "react";
-import {View, TextInput, Text, SafeAreaView} from 'react-native';
-import style from "./styles";
-import { useState } from "react";
-import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
+import React, {useState, useEffect} from 'react';
+import {View, TextInput, SafeAreaView} from 'react-native';
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+
+
+import styles from './styles.js';
 
 const DestinationSearch = (props) => {
-    const {fromText,setFromText} = useState('');
-    const {destinationText, setDestinationText} = useState('');
-    return(
-        <SafeAreaView>
-        <View style={style.container}>
-            <TextInput value={fromText} onChangeText={setFromText} style={style.textInput} placeholder="From"/>
-            <TextInput value={destinationText} onChangeText={setDestinationText} style={style.textInput} placeholder="Where To"/> 
-            <GooglePlacesAutocomplete
-            placeholder='Search'
-            onPress={(data, details = null) => {
-            // 'details' is provided when fetchDetails = true
-            console.log(data, details);
-            }}
-            query={{
-                key: 'AIzaSyA5VWIifqHFf9PuEpxXUUr72KgJa7lbQek',
-                language: 'en',
-        }}
-    />
-        </View>
-        </SafeAreaView>
-    );
-}
+  const [originPlace, setOriginPlace] = useState(null);
+  const [destinationPlace, setDestinationPlace] = useState(null);
 
+  useEffect(() => {
+    console.warn('useEffect is called');
+    if (originPlace && destinationPlace) {
+      console.warn('Redirect to results');
+    }
+  }, [originPlace, destinationPlace]);
+
+  return (
+    <SafeAreaView>
+      <View style={styles.container}>
+
+        <GooglePlacesAutocomplete
+          placeholder="Where from?"
+          onPress={(data, details = null) => {
+            setOriginPlace({data, details});
+          }}
+          styles={{
+            textInput: styles.textInput,
+          }}
+          fetchDetails
+          query={{
+            key: 'AIzaSyA5VWIifqHFf9PuEpxXUUr72KgJa7lbQek',
+            language: 'en',
+          }}
+        />
+
+        <GooglePlacesAutocomplete
+          placeholder="Where to?"
+          onPress={(data, details = null) => {
+            setDestinationPlace({data, details});
+          }}
+          styles={{
+            textInput: styles.textInput,
+          }}
+          fetchDetails
+          query={{
+            key: 'AIzaSyA5VWIifqHFf9PuEpxXUUr72KgJa7lbQek',
+            language: 'en',
+          }}
+        />
+      </View>
+    </SafeAreaView>
+  );
+};
 
 export default DestinationSearch;
