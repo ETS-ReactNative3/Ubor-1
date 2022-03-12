@@ -2,17 +2,24 @@ import React, {useState, useEffect} from 'react';
 import {View, TextInput, SafeAreaView} from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import PlaceRow from './PlaceRow';
+import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles.js';
 
 const DestinationSearch = (props) => {
+  const navigation = useNavigation();
+
+
+
   const [originPlace, setOriginPlace] = useState(null);
   const [destinationPlace, setDestinationPlace] = useState(null);
 
   useEffect(() => {
-    console.warn('useEffect is called');
     if (originPlace && destinationPlace) {
-      console.warn('Redirect to results');
+      navigation.navigate("SearchResults",{
+        originPlace,
+        destinationPlace
+      });
     }
   }, [originPlace, destinationPlace]);
 
