@@ -3,14 +3,12 @@ import {View, Text} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import SearchResults from '../screens/SearchResults';
-import HomeScreen from '../screens/HomeScreen';
-import DestinationSearch from '../screens/DestinationPage';
+import HomeNavigator from './Home'
 // import HomeNavigator from "./Home";
-// import HomeScreen from '../screens/HomeScreen';
-// import CustomDrawer from "./CustomDrawer";
+import HomeScreen from '../screens/HomeScreen';
+import CustomDrawer from "./CustomDrawer";
 
-// const Drawer = createDrawerNavigator();
+const Drawer = createDrawerNavigator();
 
 const Stack = createStackNavigator();
 
@@ -23,14 +21,9 @@ const DummyScreen = (props) => (
 const RootNavigator = (props) => {
   return (
     <NavigationContainer>
-     <Stack.Navigator initialRouteName="Home" screenOptions={{
-        headerShown: false,
-      }}>
-     <Stack.Screen name={"Home"} component={HomeScreen} />
-      <Stack.Screen name={"DestinationSearch"} component={DestinationSearch} />
-      <Stack.Screen name={"SearchResults"} component={SearchResults} />
-     </Stack.Navigator> 
-      {/* <Drawer.Navigator drawerContent={
+    
+     {/* <HomeNavigator/> */}
+      <Drawer.Navigator drawerContent={
         (props) => (
           <CustomDrawer {...props} />)
       }>
@@ -52,7 +45,7 @@ const RootNavigator = (props) => {
           {() => <DummyScreen name={"Settings"} />}
         </Drawer.Screen>
 
-      </Drawer.Navigator> */}
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 };
