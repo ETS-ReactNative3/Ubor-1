@@ -19,7 +19,7 @@ const UberTypes = (props) => {
       <Pressable onPress={confirm} style={{
         backgroundColor: 'black',
         padding: 10,
-        margin: 10,
+        margin: 5,
         alignItems: 'center',
       }}>
         <Text style={{color: 'white', fontWeight: 'bold'}}>
