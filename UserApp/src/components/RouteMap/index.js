@@ -16,8 +16,7 @@ const RouteMap = ({originProp, destinationProp}) => {
     latitude: destinationProp.details.geometry.location.lat,
     longitude: destinationProp.details.geometry.location.lng,
   };
-  https://github.com/Savinvadim1312/UberClone.git
-  //console.log({originLoc,destinationLoc});
+ 
 
 
   return (
