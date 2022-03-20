@@ -15,6 +15,7 @@ import SearchResults from './src/screens/SearchResults';
 import HomeScreen from './src/screens/HomeScreen';
 import DestinationSearch from './src/screens/DestinationPage';
 import Router from './src/navigation/Root'
+import UberTypes from './src/components/UberTypes';
 
 navigator.geolocation = require('@react-native-community/geolocation');
 

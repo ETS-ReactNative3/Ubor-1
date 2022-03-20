@@ -24,8 +24,8 @@ const RouteMap = ({originProp, destinationProp}) => {
       style={{width: '100%', height: '100%'}}
       provider={PROVIDER_GOOGLE}
       initialRegion={{
-        latitude: 51.17839720000001,
-        longitude: -115.5708073,
+        latitude: originProp.details.geometry.location.lat,
+        longitude: originProp.details.geometry.location.lng,
         latitudeDelta: 0.68,
         longitudeDelta: 0.68,
       }}>
