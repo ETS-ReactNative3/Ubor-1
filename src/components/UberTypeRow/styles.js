@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   image: {
-    height: 70,
+    height: 40,
     width: 80,
     resizeMode: 'contain',
   },
