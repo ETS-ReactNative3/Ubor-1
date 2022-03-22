@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ubor-dev-165457-authRole",
+      "UnauthRoleArn": "arn:aws:iam::349606822978:role/amplify-ubor-dev-165457-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::349606822978:role/amplify-ubor-dev-165457-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-ubor-dev-165457-deployment",
+      "UnauthRoleName": "amplify-ubor-dev-165457-unauthRole",
+      "StackName": "amplify-ubor-dev-165457",
+      "StackId": "arn:aws:cloudformation:us-west-2:349606822978:stack/amplify-ubor-dev-165457/f0b00350-a969-11ec-a124-0a0290a61493",
+      "AmplifyAppId": "d1ph9tzvvwp6r1"
+    }
+  }
+}

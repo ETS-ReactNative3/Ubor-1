@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "myapi",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/ibrahimasad/Ubor/amplify/backend/api/myapi/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2023-03-21T23:09:05.477Z",
+      "keyDescription": "test"
+    }
+  }
+}
