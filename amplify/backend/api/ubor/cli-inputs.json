@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "ubor",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\sanch\\Documents\\Work\\3rd Year\\Second Semester\\SENG401\\Project\\Ubor\\amplify\\backend\\api\\ubor\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AWS_IAM"
+    },
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "AUTOMERGE"
+      }
+    }
+  }
+}
