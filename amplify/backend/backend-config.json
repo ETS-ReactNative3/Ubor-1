@@ -1,0 +1,9 @@
+{
+  "function": {
+    "whatisgoingonPostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  }
+}

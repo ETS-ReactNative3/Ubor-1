@@ -12,6 +12,10 @@
    StatusBar,
  } from 'react-native';
  import HomeScreen from './src/screens/HomeScreen';
+ import Amplify from 'aws-amplify'
+import awsconfig from '../src/aws-exports'
+Amplify.configure(awsconfig)
+
  
  const App: () => React$Node = () => {
    return (

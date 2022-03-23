@@ -19,6 +19,11 @@ import UberTypes from './src/components/UberTypes';
 
 navigator.geolocation = require('@react-native-community/geolocation');
 
+import Amplify from 'aws-amplify'
+import awsconfig from './aws-exports'
+import { withAuthenticator } from 'aws-amplify-react-native';
+Amplify.configure(awsconfig)
+
  
  const App: () => React$Node = () => {
   const androidPermission = async () => {
@@ -62,5 +67,5 @@ navigator.geolocation = require('@react-native-community/geolocation');
    );
  };
  
- export default App;
+ export default withAuthenticator(App);
  
