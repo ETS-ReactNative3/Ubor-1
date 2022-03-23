@@ -4,7 +4,7 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
-type CustomerLocationDestinationMetaData = {
+type DriverMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
@@ -16,24 +16,23 @@ type CarLocationMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-type DriverMetaData = {
+type CustomerLocationDestinationMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-export declare class CustomerLocationDestination {
+export declare class Driver {
   readonly id: string;
-  readonly Customer_id: string;
-  readonly latitude_rider: number;
-  readonly longitude_rider: number;
-  readonly latitude_desination: number;
-  readonly longitude_destination: number;
-  readonly IsAssigned: boolean;
-  readonly AtorGoes?: Customer | null;
+  readonly License_no: number;
+  readonly Email: string;
+  readonly Phone: string;
+  readonly Fname: string;
+  readonly Lname: string;
+  readonly DOB: string;
+  readonly CarColour: string;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  readonly customerLocationDestinationAtorGoesId?: string | null;
-  constructor(init: ModelInit<CustomerLocationDestination, CustomerLocationDestinationMetaData>);
-  static copyOf(source: CustomerLocationDestination, mutator: (draft: MutableModel<CustomerLocationDestination, CustomerLocationDestinationMetaData>) => MutableModel<CustomerLocationDestination, CustomerLocationDestinationMetaData> | void): CustomerLocationDestination;
+  constructor(init: ModelInit<Driver, DriverMetaData>);
+  static copyOf(source: Driver, mutator: (draft: MutableModel<Driver, DriverMetaData>) => MutableModel<Driver, DriverMetaData> | void): Driver;
 }
 
 export declare class Customer {
@@ -57,25 +56,22 @@ export declare class CarLocation {
   readonly Longitude: number;
   readonly Latitude: number;
   readonly IsAvailable: boolean;
-  readonly At?: Driver | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  readonly carLocationAtId?: string | null;
   constructor(init: ModelInit<CarLocation, CarLocationMetaData>);
   static copyOf(source: CarLocation, mutator: (draft: MutableModel<CarLocation, CarLocationMetaData>) => MutableModel<CarLocation, CarLocationMetaData> | void): CarLocation;
 }
 
-export declare class Driver {
+export declare class CustomerLocationDestination {
   readonly id: string;
-  readonly License_no: number;
-  readonly Email: string;
-  readonly Phone: string;
-  readonly Fname: string;
-  readonly Lname: string;
-  readonly DOB: string;
-  readonly CarColour: string;
+  readonly Customer_id: string;
+  readonly latitude_rider: number;
+  readonly longitude_rider: number;
+  readonly latitude_desination: number;
+  readonly longitude_destination: number;
+  readonly IsAssigned: boolean;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  constructor(init: ModelInit<Driver, DriverMetaData>);
-  static copyOf(source: Driver, mutator: (draft: MutableModel<Driver, DriverMetaData>) => MutableModel<Driver, DriverMetaData> | void): Driver;
+  constructor(init: ModelInit<CustomerLocationDestination, CustomerLocationDestinationMetaData>);
+  static copyOf(source: CustomerLocationDestination, mutator: (draft: MutableModel<CustomerLocationDestination, CustomerLocationDestinationMetaData>) => MutableModel<CustomerLocationDestination, CustomerLocationDestinationMetaData> | void): CustomerLocationDestination;
 }

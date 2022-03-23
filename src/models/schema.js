@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "CustomerLocationDestination": {
-            "name": "CustomerLocationDestination",
+        "Driver": {
+            "name": "Driver",
             "fields": {
                 "id": {
                     "name": "id",
@@ -10,61 +10,54 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "Customer_id": {
-                    "name": "Customer_id",
+                "License_no": {
+                    "name": "License_no",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Email": {
+                    "name": "Email",
                     "isArray": false,
                     "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
-                "latitude_rider": {
-                    "name": "latitude_rider",
+                "Phone": {
+                    "name": "Phone",
                     "isArray": false,
-                    "type": "Float",
+                    "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
-                "longitude_rider": {
-                    "name": "longitude_rider",
+                "Fname": {
+                    "name": "Fname",
                     "isArray": false,
-                    "type": "Float",
+                    "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
-                "latitude_desination": {
-                    "name": "latitude_desination",
+                "Lname": {
+                    "name": "Lname",
                     "isArray": false,
-                    "type": "Float",
+                    "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
-                "longitude_destination": {
-                    "name": "longitude_destination",
+                "DOB": {
+                    "name": "DOB",
                     "isArray": false,
-                    "type": "Float",
+                    "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
-                "IsAssigned": {
-                    "name": "IsAssigned",
+                "CarColour": {
+                    "name": "CarColour",
                     "isArray": false,
-                    "type": "Boolean",
+                    "type": "String",
                     "isRequired": true,
                     "attributes": []
-                },
-                "AtorGoes": {
-                    "name": "AtorGoes",
-                    "isArray": false,
-                    "type": {
-                        "model": "Customer"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "HAS_ONE",
-                        "associatedWith": "id",
-                        "targetName": "customerLocationDestinationAtorGoesId"
-                    }
                 },
                 "createdAt": {
                     "name": "createdAt",
@@ -81,17 +74,10 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
-                },
-                "customerLocationDestinationAtorGoesId": {
-                    "name": "customerLocationDestinationAtorGoesId",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": false,
-                    "attributes": []
                 }
             },
             "syncable": true,
-            "pluralName": "CustomerLocationDestinations",
+            "pluralName": "Drivers",
             "attributes": [
                 {
                     "type": "model",
@@ -254,20 +240,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "At": {
-                    "name": "At",
-                    "isArray": false,
-                    "type": {
-                        "model": "Driver"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "HAS_ONE",
-                        "associatedWith": "id",
-                        "targetName": "carLocationAtId"
-                    }
-                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -283,13 +255,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
-                },
-                "carLocationAtId": {
-                    "name": "carLocationAtId",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": false,
-                    "attributes": []
                 }
             },
             "syncable": true,
@@ -317,8 +282,8 @@ export const schema = {
                 }
             ]
         },
-        "Driver": {
-            "name": "Driver",
+        "CustomerLocationDestination": {
+            "name": "CustomerLocationDestination",
             "fields": {
                 "id": {
                     "name": "id",
@@ -327,52 +292,45 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "License_no": {
-                    "name": "License_no",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "Email": {
-                    "name": "Email",
+                "Customer_id": {
+                    "name": "Customer_id",
                     "isArray": false,
                     "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
-                "Phone": {
-                    "name": "Phone",
+                "latitude_rider": {
+                    "name": "latitude_rider",
                     "isArray": false,
-                    "type": "String",
+                    "type": "Float",
                     "isRequired": true,
                     "attributes": []
                 },
-                "Fname": {
-                    "name": "Fname",
+                "longitude_rider": {
+                    "name": "longitude_rider",
                     "isArray": false,
-                    "type": "String",
+                    "type": "Float",
                     "isRequired": true,
                     "attributes": []
                 },
-                "Lname": {
-                    "name": "Lname",
+                "latitude_desination": {
+                    "name": "latitude_desination",
                     "isArray": false,
-                    "type": "String",
+                    "type": "Float",
                     "isRequired": true,
                     "attributes": []
                 },
-                "DOB": {
-                    "name": "DOB",
+                "longitude_destination": {
+                    "name": "longitude_destination",
                     "isArray": false,
-                    "type": "String",
+                    "type": "Float",
                     "isRequired": true,
                     "attributes": []
                 },
-                "CarColour": {
-                    "name": "CarColour",
+                "IsAssigned": {
+                    "name": "IsAssigned",
                     "isArray": false,
-                    "type": "String",
+                    "type": "Boolean",
                     "isRequired": true,
                     "attributes": []
                 },
@@ -394,7 +352,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "Drivers",
+            "pluralName": "CustomerLocationDestinations",
             "attributes": [
                 {
                     "type": "model",
@@ -421,5 +379,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "682c603763b21ee656834c39fb5df842"
+    "version": "d5d5def5a6ab78427c937d934070a021"
 };

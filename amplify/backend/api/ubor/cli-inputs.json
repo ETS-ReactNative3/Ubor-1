@@ -1,12 +1,19 @@
 {
   "version": 1,
   "serviceConfiguration": {
-    "apiName": "ubor",
+    "apiName": "Ubor",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "C:\\Users\\sanch\\Documents\\Work\\3rd Year\\Second Semester\\SENG401\\Project\\Ubor\\amplify\\backend\\api\\ubor\\schema.graphql",
+    "gqlSchemaPath": "/tmp/amplify-d1438d75-6f0d-4b5a-8bb4-907343ed2be6/amplify/backend/api/Ubor/schema.graphql",
     "defaultAuthType": {
-      "mode": "AWS_IAM"
+      "mode": "API_KEY",
+      "keyDescription": "api key description",
+      "expirationTime": 30
     },
+    "additionalAuthTypes": [
+      {
+        "mode": "AWS_IAM"
+      }
+    ],
     "conflictResolution": {
       "defaultResolutionStrategy": {
         "type": "AUTOMERGE"
