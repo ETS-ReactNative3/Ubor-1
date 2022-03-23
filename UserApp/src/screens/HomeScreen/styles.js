@@ -7,10 +7,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 20,
+    padding: 15,
   },
   bottomText: {
-    fontSize: 20,
+    fontSize: 22,
     color: '#4a4a4a',
   },
   roundButton: {

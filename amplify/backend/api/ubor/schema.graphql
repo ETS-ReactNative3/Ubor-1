@@ -1,0 +1,40 @@
+type Driver @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  License_no: Int!
+  Email: String!
+  Phone: String!
+  Fname: String!
+  Lname: String!
+  DOB: String!
+  CarColour: String!
+}
+
+type Customer @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Customer_id: Int!
+  Address: String!
+  Email: String!
+  Phone: String!
+  Fname: String!
+  Lname: String!
+  DOB: String!
+}
+
+type CarLocation @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  License_no: Int!
+  Longitude: Float!
+  Latitude: Float!
+  IsAvailable: Boolean!
+}
+
+type CustomerLocationDestination @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  Customer_id: String!
+  latitude_rider: Float!
+  longitude_rider: Float!
+  latitude_desination: Float!
+  longitude_destination: Float!
+  IsAssigned: Boolean!
+}
+ 
