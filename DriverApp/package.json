@@ -10,6 +10,15 @@
     "lint": "eslint ."
   },
   "dependencies": {
+<<<<<<< Updated upstream
+=======
+    "@react-native-async-storage/async-storage": "^1.17.0",
+    "@react-native-community/netinfo": "^8.2.0",
+    "@react-native-picker/picker": "^2.4.0",
+    "amazon-cognito-identity-js": "^5.2.8",
+    "aws-amplify": "^4.3.17",
+    "aws-amplify-react-native": "^6.0.3",
+>>>>>>> Stashed changes
     "react": "17.0.2",
     "react-native": "0.67.4",
     "react-native-maps": "0.30.1",
