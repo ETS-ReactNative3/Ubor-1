@@ -15,14 +15,15 @@ const HomeMap = (props) => {
 				)
 			)
 			
-			console.log(response);
+			console.log(response['data']['listCarLocations']['items'][0]['Latitude']);
 		}
 		catch (e){
 			console.error(e);
 		}
-		
 	};
-	
+	const Driver = async()=>{
+    
+  }
 	fetchCars();
 
   const getImage = (type) => {
