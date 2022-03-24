@@ -1,30 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Image, FlatList } from "react-native";
+
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import {API, graphqlOperation} from 'aws-amplify';
 import {listCarLocations} from '../../graphql/queries';
-import cars from '../../assets/data/cars';
+// import cars from '../../assets/data/cars';
 
 const HomeMap = (props) => {
-	
-	const fetchCars = async () =>{
-		try{
-			const response = await API.graphql(
-				graphqlOperation(
-					listCarLocations
-				)
-			)
-			
-			console.log(response['data']['listCarLocations']['items'][0]['Latitude']);
-		}
-		catch (e){
-			console.error(e);
-		}
-	};
-	const Driver = async()=>{
-    
-  }
-	fetchCars();
+	const [cars,setCars] = useState([]);
+  useEffect(()=>{
+    const fetchCars = async () =>{
+      try{
+        const response = await API.graphql(
+          graphqlOperation(
+            listCarLocations
+          )
+          
+        )
+        setCars(response.data.listCarLocations.items)
+        //  console.log(response['data']['listCarLocat  ions']['items']);
+      }
+      catch (e){
+        console.error(e);
+      }
+    }; 
+    fetchCars();
+  },[])
 
   const getImage = (type) => {
     if (type === 'UberX') {
@@ -42,19 +43,19 @@ const HomeMap = (props) => {
       provider={PROVIDER_GOOGLE}
       showsUserLocation={true}
       initialRegion={{
-        latitude: 28.450627,
-        longitude: -16.263045,
+        latitude: 37.422131,
+        longitude: -122.084801,
         latitudeDelta: 0.0222,
         longitudeDelta: 0.0121,
       }}>
       {cars.map((car) => (
         <Marker
           key={car.id}
-          coordinate={{latitude: car.latitude, longitude: car.longitude}}
+          coordinate={{latitude: car.Latitude, longitude: car.Longitude}}
         >
           <Image
-            style={{width: 70, height: 70, resizeMode: 'contain', transform: [{rotate: `${car.heading}deg`}]}}
-            source={getImage(car.type)}
+            style={{width: 70, height: 70, resizeMode: 'contain'}}
+            source={getImage('UberX')}
           />
         </Marker>
       ))}
