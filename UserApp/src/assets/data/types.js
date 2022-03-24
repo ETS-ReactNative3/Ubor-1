@@ -7,13 +7,13 @@ export default [
   },
   {
     id: '1',
-    type: 'Comfort',
+    type: 'UberX',
     price: 27,
     duration: 30,
   },
   {
     id: '2',
-    type: 'UberXL',
+    type: 'UberX',
     price: 36,
     duration: 27,
   },

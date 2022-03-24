@@ -202,12 +202,7 @@ export const createCustomerLocationDestination = /* GraphQL */ `
       longitude_rider
       latitude_desination
       longitude_destination
-      IsAssigned
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
+      isAssigned
     }
   }
 `;
