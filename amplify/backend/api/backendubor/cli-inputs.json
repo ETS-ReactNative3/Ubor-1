@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "backendubor",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/ibrahimasad/Ubor/amplify/backend/api/backendubor/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authibrahimauth"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 14,
+        "apiKeyExpirationDate": "2022-04-06T21:49:00.899Z",
+        "keyDescription": "please work god i need help"
+      }
+    ]
+  }
+}

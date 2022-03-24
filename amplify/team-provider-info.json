@@ -14,7 +14,8 @@
     "categories": {
       "auth": {
         "backendubore84adedbe84adedb": {},
-        "whatisgoingon": {}
+        "whatisgoingon": {},
+        "ibrahimauth": {}
       },
       "function": {
         "whatisgoingonPostConfirmation": {
