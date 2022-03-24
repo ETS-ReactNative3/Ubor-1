@@ -1,0 +1,41 @@
+{
+  "uborfinal": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ubor-uborfinal-164448-authRole",
+      "UnauthRoleArn": "arn:aws:iam::349606822978:role/amplify-ubor-uborfinal-164448-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::349606822978:role/amplify-ubor-uborfinal-164448-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-ubor-uborfinal-164448-deployment",
+      "UnauthRoleName": "amplify-ubor-uborfinal-164448-unauthRole",
+      "StackName": "amplify-ubor-uborfinal-164448",
+      "StackId": "arn:aws:cloudformation:us-west-2:349606822978:stack/amplify-ubor-uborfinal-164448/af5622e0-aa31-11ec-9681-0ab4a8341231",
+      "AmplifyAppId": "d2idory6nefk5a"
+    }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ubor-dev-151147-authRole",
+      "UnauthRoleArn": "arn:aws:iam::349606822978:role/amplify-ubor-dev-151147-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::349606822978:role/amplify-ubor-dev-151147-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-ubor-dev-151147-deployment",
+      "UnauthRoleName": "amplify-ubor-dev-151147-unauthRole",
+      "StackName": "amplify-ubor-dev-151147",
+      "StackId": "arn:aws:cloudformation:us-west-2:349606822978:stack/amplify-ubor-dev-151147/5cdcf980-a892-11ec-879a-065d3fc0d76d",
+      "AmplifyAppId": "d3esvqah2iwscn"
+    }
+  },
+  "ubor": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ubor-ubor-132359-authRole",
+      "UnauthRoleArn": "arn:aws:iam::349606822978:role/amplify-ubor-ubor-132359-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::349606822978:role/amplify-ubor-ubor-132359-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-ubor-ubor-132359-deployment",
+      "UnauthRoleName": "amplify-ubor-ubor-132359-unauthRole",
+      "StackName": "amplify-ubor-ubor-132359",
+      "StackId": "arn:aws:cloudformation:us-west-2:349606822978:stack/amplify-ubor-ubor-132359/a07fd4d0-aa15-11ec-872f-0aaa3fb33833",
+      "AmplifyAppId": "d3esvqah2iwscn"
+    }
+  }
+}
