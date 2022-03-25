@@ -15,7 +15,7 @@ const NewOrderPopup = ({ newOrder, onAccept, onDecline, duration, distance }) =>
       <Pressable onPress={onAccept} style={styles.popupContainer}>
 
         <View style={styles.row}>
-          <Text style={styles.uberType}>{newOrder.type}</Text>
+          <Text style={styles.uberType}>{'UberX'}</Text>
 
           <View style={styles.userBg}>
             <FontAwesome name={"user"} color={"white"} size={35} />
@@ -23,7 +23,7 @@ const NewOrderPopup = ({ newOrder, onAccept, onDecline, duration, distance }) =>
 
           <Text style={styles.uberType}>
             <AntDesign name={"star"} size={18}/>
-            {newOrder.user.rating}
+            {'4.8'}
           </Text>
         </View>
 

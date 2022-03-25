@@ -11,13 +11,14 @@ const GOOGLE_MAPS_APIKEY = 'AIzaSyA5VWIifqHFf9PuEpxXUUr72KgJa7lbQek';
 import {API,graphqlOperation} from 'aws-amplify';
 import { listDrivers } from "../../graphql/queries";
 import { updateDriver } from "../../graphql/mutations.js";
+import { listCustomerLocationDestinations } from "../../graphql/queries";
 
 
 const HomeScreen = () => {
   const [car,setCar] = useState(null);
   const [myPosition, setMyPosition] = useState(null);
   const [order, setOrder] = useState(null)
-  const [newOrder, setNewOrder] = useState({
+  const [newOrders, setNewOrders] = useState([{
     id: '1',
     type: 'UberX',
 
@@ -31,7 +32,22 @@ const HomeScreen = () => {
       rating: 4.8,
       name: 'Ciara',
     }
-  })
+  },
+  {
+    id: '2',
+    type: 'Uber Yello',
+
+    originLatitude: 37.42342342342342,
+    oreiginLongitude: -122.09495287867832,
+
+    destLatitude: 28.452927,
+    destLongitude: -16.260845,
+
+    user: {
+      rating: 4.8,
+      name: 'Rahat',
+    }
+  }])
 
   const fetchCar = async () =>{
     try{  
@@ -45,8 +61,23 @@ const HomeScreen = () => {
       console.log(e);
     }
   }
+
+  const fetchOrders = async () =>{
+    try {
+      const listAllOrders = await API.graphql(graphqlOperation(
+        listCustomerLocationDestinations,{
+          filter: {isAssigned: {eq: false}}
+        }
+      ))
+      setNewOrders(listAllOrders.data.listCustomerLocationDestinations.items)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   useEffect(()=>{
     fetchCar();
+    fetchOrders();
   },[])
 
   const onGoPress = async () => {
@@ -55,7 +86,7 @@ const HomeScreen = () => {
         updateDriver,{
           input: {
             IsAvailable: !car.IsAvailable,
-            id: car.id
+          id: car.id
           }
         }
       ))
@@ -65,12 +96,13 @@ const HomeScreen = () => {
     }
   }
   const onDecline = () => {
-    setNewOrder(null);
+    setNewOrders(newOrders.slice(1));
   }
 
-  const onAccept = (newOrder) => {
+  const onAccept =  (newOrder) => {
+    console.log(newOrder)
     setOrder(newOrder);
-    setNewOrder(null);
+    setNewOrders(newOrders.slice(1));
   }
   const onUserLocationChange = (event) => {
     setMyPosition(event.nativeEvent.coordinate);
@@ -92,13 +124,13 @@ const HomeScreen = () => {
   const getDestination = () => {
     if (order && order.pickedUp) {
       return {
-        latitude: order.destLatitude,
-        longitude: order.destLongitude,
+        latitude: order.latitude_destination,
+        longitude: order.longitude_destination,
       }
     }
     return {
-      latitude: order.originLatitude,
-      longitude: order.oreiginLongitude,
+      latitude: order.latitude_rider,
+      longitude: order.longitude_rider,
     }
   }
 
@@ -109,7 +141,7 @@ const HomeScreen = () => {
           <View style={{flexDirection: 'row', alignItems: 'center',justifyContent: 'center', backgroundColor: '#cb1a1a', width: 200, padding: 10,  }}>
             <Text style={{color: 'white', fontWeight: 'bold'}}>COMPLETE {order.type}</Text>
           </View>
-          <Text style={styles.bottomText}>{order.user.name}</Text>
+          <Text style={styles.bottomText}>{order.Name}</Text>
         </View>
       )
     }
@@ -124,7 +156,7 @@ const HomeScreen = () => {
             </View>
             <Text>{order.distance ? order.distance.toFixed(1) : '?'} km</Text>
           </View>
-          <Text style={styles.bottomText}>Dropping off {order.user.name}</Text>
+          <Text style={styles.bottomText}>Dropping off {order.Name}</Text>
         </View>
       )
     }
@@ -139,7 +171,7 @@ const HomeScreen = () => {
             </View>
             <Text>{order.distance ? order.distance.toFixed(1) : '?'} km</Text>
           </View>
-          <Text style={styles.bottomText}>Picking up {order.user.name}</Text>
+          <Text style={styles.bottomText}>Picking up {order.Name}</Text>
         </View>
       )
     }
@@ -226,12 +258,12 @@ const HomeScreen = () => {
         <Entypo name={"menu"} size={30} color="#4a4a4a" />
       </View>
 
-      {newOrder && <NewOrderPopup
-        newOrder={newOrder}
+      {newOrders.length > 0 && !order && <NewOrderPopup
+        newOrder={newOrders[0]}
         duration={2}
         distance={0.5}
         onDecline={onDecline}
-        onAccept={() => onAccept(newOrder)}
+        onAccept={() => onAccept(newOrders[0])}
       />}
     </View>
   );
