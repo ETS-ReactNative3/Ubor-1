@@ -232,7 +232,7 @@ export const listCustomerLocationDestinations = /* GraphQL */ `
         longitude_rider
         latitude_desination
         longitude_destination
-        IsAssigned
+        isAssigned
         createdAt
         updatedAt
       }

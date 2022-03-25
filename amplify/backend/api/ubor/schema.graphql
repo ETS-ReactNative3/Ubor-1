@@ -37,6 +37,7 @@ type CustomerLocationDestination
   @auth(rules: [{allow: public}]) {
   id: ID!
   Customer_id: String!
+  Name: String!
   latitude_rider: Float!
   longitude_rider: Float!
   latitude_desination: Float!
