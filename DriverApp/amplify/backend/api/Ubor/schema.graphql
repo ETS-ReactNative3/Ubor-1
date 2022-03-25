@@ -7,9 +7,6 @@ type Driver @model @searchable @auth(rules: [{allow: public}]) {
   Lname: String!
   DOB: String!
   CarColour: String!
-  Latitude: Float!
-  Longitude: Float!
-  IsAvailable: Boolean!
 }
 
 type Customer @model @searchable @auth(rules: [{allow: public}]) {

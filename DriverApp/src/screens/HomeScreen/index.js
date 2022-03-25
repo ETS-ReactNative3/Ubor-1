@@ -8,10 +8,13 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import NewOrderPopup from "../../components/NewOrderPopup";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 const GOOGLE_MAPS_APIKEY = 'AIzaSyA5VWIifqHFf9PuEpxXUUr72KgJa7lbQek';
+import {API,graphqlOperation} from 'aws-amplify';
+import { listDrivers } from "../../graphql/queries";
+import { updateDriver } from "../../graphql/mutations.js";
 
 
 const HomeScreen = () => {
-  const [isOnline, setIsOnline] = useState(false);
+  const [car,setCar] = useState(null);
   const [myPosition, setMyPosition] = useState(null);
   const [order, setOrder] = useState(null)
   const [newOrder, setNewOrder] = useState({
@@ -30,8 +33,36 @@ const HomeScreen = () => {
     }
   })
 
-  const onGoPress = () => {
-    setIsOnline(!isOnline);
+  const fetchCar = async () =>{
+    try{  
+      const userData = await API.graphql(graphqlOperation(
+        listDrivers,{
+          filter: {License_no: {eq: 12}}
+        }
+      ))
+      setCar(userData.data.listDrivers.items[0]);
+    }catch(e){
+      console.log(e);
+    }
+  }
+  useEffect(()=>{
+    fetchCar();
+  },[])
+
+  const onGoPress = async () => {
+    try {
+      const updateCarState = await API.graphql(graphqlOperation(
+        updateDriver,{
+          input: {
+            IsAvailable: !car.IsAvailable,
+            id: car.id
+          }
+        }
+      ))
+      setCar(updateCarState.data.updateDriver)
+    } catch (error) {
+      console.log(error)
+    }
   }
   const onDecline = () => {
     setNewOrder(null);
@@ -42,12 +73,11 @@ const HomeScreen = () => {
     setNewOrder(null);
   }
   const onUserLocationChange = (event) => {
-    console.log((event).nativeEvent.coordinate);
     setMyPosition(event.nativeEvent.coordinate);
   }
 
   const onDirectionFound = (event) => {
-    console.log("Direction found: ", event);
+    console.log("Direction found: ");
     if (order) {
       setOrder({
         ...order,
@@ -113,7 +143,7 @@ const HomeScreen = () => {
         </View>
       )
     }
-    if (isOnline) {
+    if (car?.IsAvailable) {
       return (
         <Text style={styles.bottomText}>You're online</Text>
       )
@@ -186,7 +216,7 @@ const HomeScreen = () => {
         onPress={onGoPress}
         style={styles.goButton}>
         <Text style={styles.goText}>
-          {isOnline ? 'END' : 'GO'}
+          {car?.IsAvailable ? 'END' : 'GO'}
         </Text>
       </Pressable>
 
