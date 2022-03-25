@@ -35,6 +35,9 @@ export const listDrivers = /* GraphQL */ `
         CarColour
         createdAt
         updatedAt
+        Longitude
+        Latitude
+        isAvailable
       }
       nextToken
     }

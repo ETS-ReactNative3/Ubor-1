@@ -36,12 +36,12 @@ export const updateDriver = /* GraphQL */ `
       Fname
       Lname
       DOB
+      IsAvailable
+      Longitude
+      Latitude
       CarColour
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
