@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-backendubor-dev-141948-authRole",
+      "UnauthRoleArn": "arn:aws:iam::437952287292:role/amplify-backendubor-dev-141948-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::437952287292:role/amplify-backendubor-dev-141948-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-backendubor-dev-141948-deployment",
+      "UnauthRoleName": "amplify-backendubor-dev-141948-unauthRole",
+      "StackName": "amplify-backendubor-dev-141948",
+      "StackId": "arn:aws:cloudformation:us-west-1:437952287292:stack/amplify-backendubor-dev-141948/44133820-a954-11ec-bdab-06274eeb8db5",
+      "AmplifyAppId": "d2k3pg3fxplnpw"
+    },
+    "categories": {
+      "function": {
+        "whatisgoingonPostConfirmation": {
+          "deploymentBucketName": "amplify-backendubor-dev-141948-deployment",
+          "s3Key": "amplify-builds/whatisgoingonPostConfirmation-2b486261387748487669-build.zip"
+        }
+      },
+      "auth": {
+        "ibrahimauth": {}
+      }
+    }
+  }
+}
