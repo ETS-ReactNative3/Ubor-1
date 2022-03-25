@@ -1,9 +1,9 @@
 import CovidMessage from '../src/components/CovidMessage/index';
-import HomeMap from '../src/components/HomeMap';
-import HomeSearch from '../src/components/HomeSearch';
-import RouteMap from '../src/components/RouteMap';
-import UberTypeRow from '../src/components/UberTypeRow';
-import UberTypes from '../src/components/UberTypes';
+import HomeMap from '../src/components/HomeMap/index';
+import HomeSearch from '../src/components/HomeSearch/index';
+import RouteMap from '../src/components/RouteMap/index';
+import UberTypeRow from '../src/components/UberTypeRow/index';
+import UberTypes from '../src/components/UberTypes/index';
 import CustomDrawer  from '../src/navigation/CustomDrawer';
 import HomeNavigator from '../src/navigation/Home';
 
