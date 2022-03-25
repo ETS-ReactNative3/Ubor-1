@@ -203,6 +203,8 @@ export const createCustomerLocationDestination = /* GraphQL */ `
       latitude_desination
       longitude_destination
       isAssigned
+      Name
+      carID
     }
   }
 `;

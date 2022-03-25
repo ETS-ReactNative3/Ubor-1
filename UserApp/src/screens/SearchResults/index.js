@@ -17,12 +17,13 @@ const SearchResults = (props) => {
       const date = new Date();
       try{
         var input = {
-          Customer_id: "4",
+          Customer_id: "6",
+          Name: "Jay2",
           latitude_rider: originPlace.details.geometry.location.lat,
           longitude_rider: originPlace.details.geometry.location.lng,
           latitude_desination: destinationPlace.details.geometry.location.lat,
           longitude_destination: destinationPlace.details.geometry.location.lng,
-          carID: "",
+          carID:"",
           isAssigned: false,
         }
         const response = await API.graphql(
@@ -30,9 +31,9 @@ const SearchResults = (props) => {
             input: input
           })
         )
-        console.log(response);
       }catch(e){
-        console.error(e);
+        console.log("Hello")
+        // console.error(e.data.errors.locations);
       }
     }
   }
