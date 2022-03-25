@@ -86,10 +86,11 @@ const HomeScreen = () => {
         updateDriver,{
           input: {
             IsAvailable: !car.IsAvailable,
-          id: car.id
+            id: car.id
           }
         }
       ))
+      // console.log(updateCarState.data.updateDriver.id)
       setCar(updateCarState.data.updateDriver)
     } catch (error) {
       console.log(error)
@@ -100,12 +101,27 @@ const HomeScreen = () => {
   }
 
   const onAccept =  (newOrder) => {
-    console.log(newOrder)
+    // console.log(newOrder)
     setOrder(newOrder);
     setNewOrders(newOrders.slice(1));
   }
-  const onUserLocationChange = (event) => {
+  const onUserLocationChange = async (event) => {
     setMyPosition(event.nativeEvent.coordinate);
+    const {latitude,longitude} = event.nativeEvent.coordinate
+    try {
+      const updateCarState = await API.graphql(graphqlOperation(
+        updateDriver,{
+          input: {
+            Latitude: latitude,
+            Longitude: longitude,
+            id: "f63e1bc4-3e31-4106-a9dd-f56a59d83b86"
+          }
+        }
+      ))
+      setCar(updateCarState.data.updateDriver)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const onDirectionFound = (event) => {
@@ -162,6 +178,7 @@ const HomeScreen = () => {
     }
 
     if (order) {
+      // console.log(order)
       return (
         <View style={{ alignItems: 'center' }}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -188,19 +205,30 @@ const HomeScreen = () => {
       <MapView
         style={{width: '100%', height: Dimensions.get('window').height - 120}}
         provider={PROVIDER_GOOGLE}
+        showsMyLocationButton={true}
         showsUserLocation={true}
+        followsUserLocation={true}
+        userLocationPriority={'high'}
+        userLocationUpdateInterval={10}
+        userLocationFastestInterval={10}
         onUserLocationChange={onUserLocationChange}
         initialRegion={{
           latitude: 37.42342342342342,
           longitude: -122.09495287867832,
-          latitudeDelta: 0.02,
-          longitudeDelta: 0.0121,
+          latitudeDelta: 0.002,
+          longitudeDelta: 0.01021,
         }}
       >
         
         {order && (
           <MapViewDirections
-            origin={myPosition}
+            origin={
+              {
+              latitude: car.Latitude,
+              longitude: car.Longitude
+            }
+            // myPosition
+          }
             onReady={onDirectionFound}
             destination={getDestination()}
             apikey={GOOGLE_MAPS_APIKEY}
@@ -260,8 +288,8 @@ const HomeScreen = () => {
 
       {newOrders.length > 0 && !order && <NewOrderPopup
         newOrder={newOrders[0]}
-        duration={2}
-        distance={0.5}
+        duration={25}
+        distance={30}
         onDecline={onDecline}
         onAccept={() => onAccept(newOrders[0])}
       />}

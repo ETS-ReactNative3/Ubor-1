@@ -235,6 +235,7 @@ export const listCustomerLocationDestinations = /* GraphQL */ `
         isAssigned
         createdAt
         updatedAt
+        Name
       }
       nextToken
     }
