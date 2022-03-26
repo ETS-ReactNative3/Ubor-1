@@ -2,6 +2,7 @@
 import React from 'react';
 import Confirm from '../components/UberTypes/ConfirmUber'
 
+//ConfirmingUberTest();
 test('confirming uber', () => {
   var type = {
       selectedType: "54",
@@ -10,6 +11,7 @@ test('confirming uber', () => {
   expect(Confirm(type)).toBe("confirm");
 });
 
+//NotConfirmedTest();
 test('not confirmed ', () => {
     var type = {
         selectedType: "54",
