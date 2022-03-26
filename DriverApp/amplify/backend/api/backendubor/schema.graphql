@@ -1,0 +1,57 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+#input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+# type User @model @auth(rules:[{allow: public}]) {
+#   id: ID!
+#   username: String!
+#   email: String
+# }
+
+type Driver @model @searchable @auth(rules: [{allow: public, provider: apiKey}]) {
+  id: ID!
+  License_no: Int!
+  Email: String!
+  Phone: String!
+  Fname: String!
+  Lname: String!
+  DOB: String!
+  CarColour: String!
+  Latitude: Float
+  Longitude: Float
+  IsAvailable: Boolean
+}
+
+type Customer @model @searchable @auth(rules: [{allow: public, provider: apiKey}]) {
+  id: ID!
+  Customer_id: Int!
+  Address: String!
+  Email: String!
+  Phone: String!
+  Fname: String!
+  Lname: String!
+  DOB: String!
+}
+
+type CarLocation @model @searchable @auth(rules: [{allow: public, provider: apiKey}]) {
+  id: ID!
+  License_no: Int!
+  Longitude: Float!
+  Latitude: Float!
+  IsAvailable: Boolean!
+}
+
+type CustomerLocationDestination
+  @model
+  @searchable
+  @auth(rules: [{allow: public, provider: apiKey}]) {
+  id: ID!
+  Customer_id: String!
+  Name: String!
+  latitude_rider: Float!
+  longitude_rider: Float!
+  latitude_desination: Float!
+  longitude_destination: Float!
+  isAssigned: Boolean!
+  carID: String!
+}

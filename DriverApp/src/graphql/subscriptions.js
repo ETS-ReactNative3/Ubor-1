@@ -12,11 +12,11 @@ export const onCreateDriver = /* GraphQL */ `
       Lname
       DOB
       CarColour
+      Latitude
+      Longitude
+      IsAvailable
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -31,11 +31,11 @@ export const onUpdateDriver = /* GraphQL */ `
       Lname
       DOB
       CarColour
+      Latitude
+      Longitude
+      IsAvailable
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -50,11 +50,11 @@ export const onDeleteDriver = /* GraphQL */ `
       Lname
       DOB
       CarColour
+      Latitude
+      Longitude
+      IsAvailable
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -71,9 +71,6 @@ export const onCreateCustomer = /* GraphQL */ `
       DOB
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -90,9 +87,6 @@ export const onUpdateCustomer = /* GraphQL */ `
       DOB
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -109,9 +103,6 @@ export const onDeleteCustomer = /* GraphQL */ `
       DOB
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -125,9 +116,6 @@ export const onCreateCarLocation = /* GraphQL */ `
       IsAvailable
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -141,9 +129,6 @@ export const onUpdateCarLocation = /* GraphQL */ `
       IsAvailable
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -157,9 +142,6 @@ export const onDeleteCarLocation = /* GraphQL */ `
       IsAvailable
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -168,16 +150,15 @@ export const onCreateCustomerLocationDestination = /* GraphQL */ `
     onCreateCustomerLocationDestination {
       id
       Customer_id
+      Name
       latitude_rider
       longitude_rider
       latitude_desination
       longitude_destination
-      IsAssigned
+      isAssigned
+      carID
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -186,16 +167,15 @@ export const onUpdateCustomerLocationDestination = /* GraphQL */ `
     onUpdateCustomerLocationDestination {
       id
       Customer_id
+      Name
       latitude_rider
       longitude_rider
       latitude_desination
       longitude_destination
-      IsAssigned
+      isAssigned
+      carID
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -204,16 +184,15 @@ export const onDeleteCustomerLocationDestination = /* GraphQL */ `
     onDeleteCustomerLocationDestination {
       id
       Customer_id
+      Name
       latitude_rider
       longitude_rider
       latitude_desination
       longitude_destination
-      IsAssigned
+      isAssigned
+      carID
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;

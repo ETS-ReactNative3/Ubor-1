@@ -1,15 +1,26 @@
 {
-  "uborfinal": {
+  "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-ubor-uborfinal-164448-authRole",
-      "UnauthRoleArn": "arn:aws:iam::349606822978:role/amplify-ubor-uborfinal-164448-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::349606822978:role/amplify-ubor-uborfinal-164448-authRole",
-      "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-ubor-uborfinal-164448-deployment",
-      "UnauthRoleName": "amplify-ubor-uborfinal-164448-unauthRole",
-      "StackName": "amplify-ubor-uborfinal-164448",
-      "StackId": "arn:aws:cloudformation:us-west-2:349606822978:stack/amplify-ubor-uborfinal-164448/af5622e0-aa31-11ec-9681-0ab4a8341231",
-      "AmplifyAppId": "d2idory6nefk5a"
+      "AuthRoleName": "amplify-backendubor-dev-141948-authRole",
+      "UnauthRoleArn": "arn:aws:iam::437952287292:role/amplify-backendubor-dev-141948-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::437952287292:role/amplify-backendubor-dev-141948-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-backendubor-dev-141948-deployment",
+      "UnauthRoleName": "amplify-backendubor-dev-141948-unauthRole",
+      "StackName": "amplify-backendubor-dev-141948",
+      "StackId": "arn:aws:cloudformation:us-west-1:437952287292:stack/amplify-backendubor-dev-141948/44133820-a954-11ec-bdab-06274eeb8db5",
+      "AmplifyAppId": "d2k3pg3fxplnpw"
+    },
+    "categories": {
+      "function": {
+        "whatisgoingonPostConfirmation": {
+          "deploymentBucketName": "amplify-backendubor-dev-141948-deployment",
+          "s3Key": "amplify-builds/whatisgoingonPostConfirmation-612f61396e7a48507338-build.zip"
+        }
+      },
+      "auth": {
+        "ibrahimauth": {}
+      }
     }
   }
 }
