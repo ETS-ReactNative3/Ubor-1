@@ -3,7 +3,7 @@ import React from 'react';
 import {submitDest} from '../screens/DestinationPage/DestinationPage'
 
 
-test('submitting a destination', () => {
+test('submitting a valid destination', () => {
   var temp = "University of Calgary";
   expect(submitDest(temp)).toBe("success");
 });
