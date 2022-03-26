@@ -205,9 +205,9 @@ const HomeScreen = () => {
       <MapView
         style={{width: '100%', height: Dimensions.get('window').height - 120}}
         provider={PROVIDER_GOOGLE}
-        showsMyLocationButton={false}
-        showsUserLocation={false}
-        followsUserLocation={false}
+        showsMyLocationButton={true}
+        showsUserLocation={true}
+        followsUserLocation={true}
         userLocationPriority={'high'}
         userLocationUpdateInterval={10}
         userLocationFastestInterval={10}

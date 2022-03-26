@@ -1,9 +1,10 @@
 import React from "react";
-import {View, Text} from 'react-native';
+import {View, Text,Pressable} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import HomeNavigator from './Home'
+import { Auth } from "aws-amplify";
 // import HomeNavigator from "./Home";
 import HomeScreen from '../screens/HomeScreen';
 import CustomDrawer from "./CustomDrawer";
@@ -43,7 +44,7 @@ const RootNavigator = (props) => {
 
         <Drawer.Screen name="Settings">
           {() => <DummyScreen name={"Settings"} />}
-        </Drawer.Screen>
+        </Drawer.Screen>        
 
       </Drawer.Navigator>
     </NavigationContainer>

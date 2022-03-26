@@ -5,6 +5,7 @@ import {API,graphqlOperation} from 'aws-amplify';
 import {createCustomerLocationDestination} from '../../graphql/mutations'
 import UberTypes from "../../components/UberTypes";
 import { useRoute } from '@react-navigation/native';
+import { Auth } from 'aws-amplify';
 const SearchResults = (props) => {
   const typeState = useState();
   const route = useRoute();
@@ -15,10 +16,12 @@ const SearchResults = (props) => {
       return;
     }else{
       const date = new Date();
+      const UserInfo2 = await Auth.currentUserInfo();
+      // console.log(use)
       try{
         var input = {
-          Customer_id: "6",
-          Name: "Jay2",
+          Customer_id: UserInfo2.attributes.sub,
+          Name: UserInfo2.attributes['custom:fname'],
           latitude_rider: originPlace.details.geometry.location.lat,
           longitude_rider: originPlace.details.geometry.location.lng,
           latitude_desination: destinationPlace.details.geometry.location.lat,
@@ -31,8 +34,8 @@ const SearchResults = (props) => {
             input: input
           })
         )
+        console.log(response)
       }catch(e){
-        console.log("Hello")
         // console.error(e.data.errors.locations);
       }
     }

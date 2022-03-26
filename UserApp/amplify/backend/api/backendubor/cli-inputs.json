@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "backendubor",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\Rahat\\Documents\\amplifytut\\amplify\\backend\\api\\backendubor\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authibrahimauth"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 14,
+        "apiKeyExpirationDate": "2022-04-07T18:53:30.108Z",
+        "keyDescription": ""
+      }
+    ]
+  }
+}

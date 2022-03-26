@@ -1,5 +1,5 @@
 projects:
-  Ubor-uborfinal:
+  backendubor-dev:
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.js
@@ -10,8 +10,8 @@ projects:
         codeGenTarget: javascript
         generatedFileName: ''
         docsFilePath: src/graphql
-        region: us-west-2
-        apiId: szn2ch45nvfhfcxmyrzhxgy66e
+        region: us-west-1
+        apiId: 24xwlprelfem3kicjs3uobneky
         maxDepth: 2
 extensions:
   amplify:

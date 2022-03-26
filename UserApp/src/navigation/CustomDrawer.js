@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import {DrawerContentScrollView, DrawerItemList} from '@react-navigation/drawer';
+import { Auth } from "aws-amplify";
 
-const CustomDrawer = (props) => {
+const CustomDrawer =  (props) => {
+const  [User,setUser]=useState();
+  const hello = async() => {
+    setUser(await Auth.currentUserInfo());
+  }
+  useEffect(()=>{
+    hello();
+    console.log(User);
+  },[])
   return (
     <DrawerContentScrollView {...props}>
       <View style={{backgroundColor: '#212121', padding: 15}}>
@@ -21,7 +30,7 @@ const CustomDrawer = (props) => {
           }}/>
 
           <View>
-            <Text style={{color: 'white', fontSize: 24}}>Jay Gurjar</Text>
+            <Text style={{color: 'white', fontSize: 24}}>{User?.attributes['custom:fname']+' '+User?.attributes['custom:lname']}</Text>
             <Text style={{color: 'lightgrey'}}>5.00 *</Text>
           </View>
         </View>
@@ -56,6 +65,9 @@ const CustomDrawer = (props) => {
       </View>
 
       <DrawerItemList {...props} />
+      <Pressable onPress={() => {Auth.signOut()}}>
+          <Text style={{color: 'grey',fontWeight: "bold", paddingVertical: 8,paddingLeft: 20}}>Sign Out</Text>
+        </Pressable>
     </DrawerContentScrollView>
   );
 };

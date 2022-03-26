@@ -12,6 +12,9 @@ export const getDriver = /* GraphQL */ `
       Lname
       DOB
       CarColour
+      Latitude
+      Longitude
+      IsAvailable
       createdAt
       updatedAt
     }
@@ -33,6 +36,9 @@ export const listDrivers = /* GraphQL */ `
         Lname
         DOB
         CarColour
+        Latitude
+        Longitude
+        IsAvailable
         createdAt
         updatedAt
       }
@@ -40,18 +46,22 @@ export const listDrivers = /* GraphQL */ `
     }
   }
 `;
-export const syncDrivers = /* GraphQL */ `
-  query SyncDrivers(
-    $filter: ModelDriverFilterInput
+export const searchDrivers = /* GraphQL */ `
+  query SearchDrivers(
+    $filter: SearchableDriverFilterInput
+    $sort: [SearchableDriverSortInput]
     $limit: Int
     $nextToken: String
-    $lastSync: AWSTimestamp
+    $from: Int
+    $aggregates: [SearchableDriverAggregationInput]
   ) {
-    syncDrivers(
+    searchDrivers(
       filter: $filter
+      sort: $sort
       limit: $limit
       nextToken: $nextToken
-      lastSync: $lastSync
+      from: $from
+      aggregates: $aggregates
     ) {
       items {
         id
@@ -62,10 +72,28 @@ export const syncDrivers = /* GraphQL */ `
         Lname
         DOB
         CarColour
+        Latitude
+        Longitude
+        IsAvailable
         createdAt
         updatedAt
       }
       nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -108,18 +136,22 @@ export const listCustomers = /* GraphQL */ `
     }
   }
 `;
-export const syncCustomers = /* GraphQL */ `
-  query SyncCustomers(
-    $filter: ModelCustomerFilterInput
+export const searchCustomers = /* GraphQL */ `
+  query SearchCustomers(
+    $filter: SearchableCustomerFilterInput
+    $sort: [SearchableCustomerSortInput]
     $limit: Int
     $nextToken: String
-    $lastSync: AWSTimestamp
+    $from: Int
+    $aggregates: [SearchableCustomerAggregationInput]
   ) {
-    syncCustomers(
+    searchCustomers(
       filter: $filter
+      sort: $sort
       limit: $limit
       nextToken: $nextToken
-      lastSync: $lastSync
+      from: $from
+      aggregates: $aggregates
     ) {
       items {
         id
@@ -134,6 +166,21 @@ export const syncCustomers = /* GraphQL */ `
         updatedAt
       }
       nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -170,18 +217,22 @@ export const listCarLocations = /* GraphQL */ `
     }
   }
 `;
-export const syncCarLocations = /* GraphQL */ `
-  query SyncCarLocations(
-    $filter: ModelCarLocationFilterInput
+export const searchCarLocations = /* GraphQL */ `
+  query SearchCarLocations(
+    $filter: SearchableCarLocationFilterInput
+    $sort: [SearchableCarLocationSortInput]
     $limit: Int
     $nextToken: String
-    $lastSync: AWSTimestamp
+    $from: Int
+    $aggregates: [SearchableCarLocationAggregationInput]
   ) {
-    syncCarLocations(
+    searchCarLocations(
       filter: $filter
+      sort: $sort
       limit: $limit
       nextToken: $nextToken
-      lastSync: $lastSync
+      from: $from
+      aggregates: $aggregates
     ) {
       items {
         id
@@ -193,6 +244,21 @@ export const syncCarLocations = /* GraphQL */ `
         updatedAt
       }
       nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -201,11 +267,13 @@ export const getCustomerLocationDestination = /* GraphQL */ `
     getCustomerLocationDestination(id: $id) {
       id
       Customer_id
+      Name
       latitude_rider
       longitude_rider
       latitude_desination
       longitude_destination
-      IsAssigned
+      isAssigned
+      carID
       createdAt
       updatedAt
     }
@@ -225,11 +293,13 @@ export const listCustomerLocationDestinations = /* GraphQL */ `
       items {
         id
         Customer_id
+        Name
         latitude_rider
         longitude_rider
         latitude_desination
         longitude_destination
-        IsAssigned
+        isAssigned
+        carID
         createdAt
         updatedAt
       }
@@ -237,31 +307,52 @@ export const listCustomerLocationDestinations = /* GraphQL */ `
     }
   }
 `;
-export const syncCustomerLocationDestinations = /* GraphQL */ `
-  query SyncCustomerLocationDestinations(
-    $filter: ModelCustomerLocationDestinationFilterInput
+export const searchCustomerLocationDestinations = /* GraphQL */ `
+  query SearchCustomerLocationDestinations(
+    $filter: SearchableCustomerLocationDestinationFilterInput
+    $sort: [SearchableCustomerLocationDestinationSortInput]
     $limit: Int
     $nextToken: String
-    $lastSync: AWSTimestamp
+    $from: Int
+    $aggregates: [SearchableCustomerLocationDestinationAggregationInput]
   ) {
-    syncCustomerLocationDestinations(
+    searchCustomerLocationDestinations(
       filter: $filter
+      sort: $sort
       limit: $limit
       nextToken: $nextToken
-      lastSync: $lastSync
+      from: $from
+      aggregates: $aggregates
     ) {
       items {
         id
         Customer_id
+        Name
         latitude_rider
         longitude_rider
         latitude_desination
         longitude_destination
-        IsAssigned
+        isAssigned
+        carID
         createdAt
         updatedAt
       }
       nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
     }
   }
 `;

@@ -42,6 +42,9 @@
     "react-test-renderer": "17.0.2"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|@react-native|react-clone-referenced-element|@react-native-community|'@react-native-community/geolocation|expo(nent)?|@expo(nent)?/.*|react-navigation|react-native-gesture-handler/.*|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
+    ]
   }
 }

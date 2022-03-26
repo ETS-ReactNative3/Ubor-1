@@ -17,6 +17,7 @@ const HomeMap = (props) => {
           )
           
         )
+        console.log(response.data.listCarLocations)
         setCars(response.data.listCarLocations.items)
         //  console.log(response['data']['listCarLocat  ions']['items']);
       }
