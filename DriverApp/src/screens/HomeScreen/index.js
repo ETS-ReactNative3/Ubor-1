@@ -12,6 +12,9 @@ import {API,graphqlOperation} from 'aws-amplify';
 import { listDrivers } from "../../graphql/queries";
 import { updateDriver } from "../../graphql/mutations.js";
 import { listCustomerLocationDestinations } from "../../graphql/queries";
+import { Auth } from "aws-amplify";
+import { updateCustomerLocationDestination } from "../../graphql/mutations.js";
+
 
 
 const HomeScreen = () => {
@@ -50,12 +53,14 @@ const HomeScreen = () => {
   }])
 
   const fetchCar = async () =>{
+    const userInfo = await Auth.currentUserInfo();
     try{  
       const userData = await API.graphql(graphqlOperation(
         listDrivers,{
-          filter: {License_no: {eq: 12}}
+          filter: {id: {eq: userInfo.attributes.sub}}
         }
       ))
+      // console.log(userData.data.listDrivers)
       setCar(userData.data.listDrivers.items[0]);
     }catch(e){
       console.log(e);
@@ -69,6 +74,7 @@ const HomeScreen = () => {
           filter: {isAssigned: {eq: false}}
         }
       ))
+      // console.log(listAllOrders.data.listCustomerLocationDestinations)
       setNewOrders(listAllOrders.data.listCustomerLocationDestinations.items)
     } catch (error) {
       console.log(error)
@@ -90,7 +96,7 @@ const HomeScreen = () => {
           }
         }
       ))
-      // console.log(updateCarState.data.updateDriver.id)
+      // console.log(updateCarState.data.updateDriver.IsAvailable)
       setCar(updateCarState.data.updateDriver)
     } catch (error) {
       console.log(error)
@@ -100,12 +106,34 @@ const HomeScreen = () => {
     setNewOrders(newOrders.slice(1));
   }
 
-  const onAccept =  (newOrder) => {
-    // console.log(newOrder)
-    setOrder(newOrder);
-    setNewOrders(newOrders.slice(1));
+  const onAccept = async (newOrder) => {
+    // console.log(newOrder
+    // console.log(newOrder);
+    try {
+      await fetchOrders();
+      // console.log("new Orders 114",newOrders)
+      if (newOrders.includes(newOrder)){
+        // console.log("inside if");
+        const updateOrderStatus = API.graphql(
+          graphqlOperation(
+            updateCustomerLocationDestination,{
+              input: {
+                id: newOrder.id,
+                isAssigned: !newOrder.isAssigned
+              }
+            }
+          )
+        )
+        // console.log("update car",updateOrderStatus.data)
+      }
+      }catch (error) {
+        console.log(error)
+      }
+      setOrder(newOrder);
+      setNewOrders(newOrders.slice(1));
   }
   const onUserLocationChange = async (event) => {
+    const userInfo = await Auth.currentUserInfo();
     setMyPosition(event.nativeEvent.coordinate);
     const {latitude,longitude} = event.nativeEvent.coordinate
     try {
@@ -114,7 +142,7 @@ const HomeScreen = () => {
           input: {
             Latitude: latitude,
             Longitude: longitude,
-            id: "f63e1bc4-3e31-4106-a9dd-f56a59d83b86"
+            id: userInfo.attributes.sub
           }
         }
       ))
@@ -144,6 +172,7 @@ const HomeScreen = () => {
         longitude: order.longitude_destination,
       }
     }
+    console.log(order);
     return {
       latitude: order.latitude_rider,
       longitude: order.longitude_rider,
@@ -221,6 +250,7 @@ const HomeScreen = () => {
       >
         
         {order && (
+          console.log(car),
           <MapViewDirections
             origin={
               {

@@ -15,7 +15,7 @@
       "function": {
         "whatisgoingonPostConfirmation": {
           "deploymentBucketName": "amplify-backendubor-dev-141948-deployment",
-          "s3Key": "amplify-builds/whatisgoingonPostConfirmation-614b34676251496c4e33-build.zip"
+          "s3Key": "amplify-builds/whatisgoingonPostConfirmation-612f61396e7a48507338-build.zip"
         }
       },
       "auth": {
