@@ -15,6 +15,7 @@ export const onCreateDriver = /* GraphQL */ `
       Latitude
       Longitude
       IsAvailable
+      Customer_id
       createdAt
       updatedAt
     }
@@ -34,6 +35,7 @@ export const onUpdateDriver = /* GraphQL */ `
       Latitude
       Longitude
       IsAvailable
+      Customer_id
       createdAt
       updatedAt
     }
@@ -53,6 +55,7 @@ export const onDeleteDriver = /* GraphQL */ `
       Latitude
       Longitude
       IsAvailable
+      Customer_id
       createdAt
       updatedAt
     }

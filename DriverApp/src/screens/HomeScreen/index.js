@@ -14,6 +14,7 @@ import { updateDriver } from "../../graphql/mutations.js";
 import { listCustomerLocationDestinations } from "../../graphql/queries";
 import { Auth } from "aws-amplify";
 import { updateCustomerLocationDestination } from "../../graphql/mutations.js";
+import {getDistance} from 'geolib'
 
 
 
@@ -21,6 +22,7 @@ const HomeScreen = () => {
   const [car,setCar] = useState(null);
   const [myPosition, setMyPosition] = useState(null);
   const [order, setOrder] = useState(null)
+  const [distanceCal,setDistanceCal] = useState(7);
   const [newOrders, setNewOrders] = useState([{
     id: '1',
     type: 'UberX',
@@ -62,6 +64,17 @@ const HomeScreen = () => {
       ))
       // console.log(userData.data.listDrivers)
       setCar(userData.data.listDrivers.items[0]);
+      // if(userData.data.listDrivers.items[0].Customer_id!=null){
+      //   console.log("Not null")
+      //   const gettingOrderInfo = await API.graphql(graphqlOperation(
+      //     listCustomerLocationDestinations,{
+      //       filter: {id: {eq: userData.data.listDrivers.items[0].Customer_id}}
+      //     }
+      //   ))
+      //   console.log("Setting stuff",gettingOrderInfo.data.listCustomerLocationDestinations)
+      //   setOrder(gettingOrderInfo.data.listCustomerLocationDestinations)
+      // }else 
+      // console.log("Not null")
     }catch(e){
       console.log(e);
     }
@@ -79,6 +92,21 @@ const HomeScreen = () => {
     } catch (error) {
       console.log(error)
     }
+  }
+
+  const settingRefreshStuff = async () => {
+    console.log(car);
+    // if(car.Customer_id!=null){
+    //   console.log("Not null")
+    //   const gettingOrderInfo = await API.graphql(graphqlOperation(
+    //     listCustomerLocationDestinations,{
+    //       filter: {id: {eq: car.Customer_id}}
+    //     }
+    //   ))
+    //   console.log("Setting stuff",gettingOrderInfo.data.listCustomerLocationDestinations)
+    //   setOrder(gettingOrderInfo.data.listCustomerLocationDestinations)
+    // }else 
+    // console.log("Not null")
   }
 
   useEffect(()=>{
@@ -103,6 +131,12 @@ const HomeScreen = () => {
     }
   }
   const onDecline = () => {
+    setDistanceCal(getDistance({
+      latitude: newOrders[0].latitude_rider,
+      longitude: newOrders[0].longitude_rider
+    },{latitude: 37.35485,longitude: -122.085478})/1000
+);    
+//  console.log("Distacne cal is ",distanceCal);
     setNewOrders(newOrders.slice(1));
   }
 
@@ -111,19 +145,32 @@ const HomeScreen = () => {
     // console.log(newOrder);
     try {
       await fetchOrders();
-      // console.log("new Orders 114",newOrders)
+      const userInfo = await Auth.currentUserInfo();
+      console.log("new Orders 114",newOrders)
       if (newOrders.includes(newOrder)){
         // console.log("inside if");
-        const updateOrderStatus = API.graphql(
+        const updateOrderStatus = await API.graphql(
           graphqlOperation(
             updateCustomerLocationDestination,{
               input: {
                 id: newOrder.id,
-                isAssigned: !newOrder.isAssigned
+                isAssigned: !newOrder.isAssigned,
+                carID: userInfo.attributes.sub
+              }
+            }
+          ),
+        )
+        const addingCustId = await API.graphql(
+          graphqlOperation(
+            updateDriver,{
+              input: {
+                id: userInfo.attributes.sub,
+                Customer_id: newOrder.id
               }
             }
           )
         )
+        console.log(addingCustId.data)
         // console.log("update car",updateOrderStatus.data)
       }
       }catch (error) {
@@ -172,7 +219,7 @@ const HomeScreen = () => {
         longitude: order.longitude_destination,
       }
     }
-    console.log(order);
+    // console.log(order);
     return {
       latitude: order.latitude_rider,
       longitude: order.longitude_rider,
@@ -250,7 +297,7 @@ const HomeScreen = () => {
       >
         
         {order && (
-          console.log(car),
+          // console.log(car),
           <MapViewDirections
             origin={
               {
@@ -316,10 +363,17 @@ const HomeScreen = () => {
         <Entypo name={"menu"} size={30} color="#4a4a4a" />
       </View>
 
+
+      
+      {/* {car.Customer_id!=null ? {
+
+      } : {
+
+      }} */}
       {newOrders.length > 0 && !order && <NewOrderPopup
         newOrder={newOrders[0]}
-        duration={25}
-        distance={30}
+        duration={Math.round(distanceCal * 1.5)}
+        distance={distanceCal}
         onDecline={onDecline}
         onAccept={() => onAccept(newOrders[0])}
       />}

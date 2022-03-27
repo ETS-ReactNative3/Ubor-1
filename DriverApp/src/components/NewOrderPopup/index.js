@@ -28,7 +28,7 @@ const NewOrderPopup = ({ newOrder, onAccept, onDecline, duration, distance }) =>
         </View>
 
         <Text style={styles.minutes}>{duration} min</Text>
-        <Text style={styles.distance}>{distance} mi</Text>
+        <Text style={styles.distance}>{distance} km</Text>
 
       </Pressable>
     </View>
