@@ -321,7 +321,7 @@ const HomeScreen = () => {
         <Text style={styles.balanceText}>
           <Text style={{ color: 'green' }}>$</Text>
           {' '}
-          0.00
+          {order ? order.distance * 1.25 : '0.00'}
         </Text>
       </Pressable>
 
@@ -332,9 +332,9 @@ const HomeScreen = () => {
       </Pressable>
 
       <Pressable
-        onPress={() => console.warn('Hey')}
+        onPress={() => {Auth.signOut()}}
         style={[styles.roundButton, {top: 10, right: 10}]}>
-        <Entypo name={"menu"} size={24} color="#4a4a4a"/>
+        <FontAwesome name={"sign-out"} size={24} color="#4a4a4a"/>
       </Pressable>
 
       <Pressable
