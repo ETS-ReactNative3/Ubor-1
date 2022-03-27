@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Image, FlatList } from "react-native";
+import { Image } from "react-native";
 
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import {API, graphqlOperation} from 'aws-amplify';
-import {listCarLocations} from '../../graphql/queries';
+import {listDrivers} from '../../graphql/queries';
 // import cars from '../../assets/data/cars';
 
 const HomeMap = (props) => {
@@ -13,12 +13,12 @@ const HomeMap = (props) => {
       try{
         const response = await API.graphql(
           graphqlOperation(
-            listCarLocations
+            listDrivers
           )
           
         )
-        console.log(response.data.listCarLocations)
-        setCars(response.data.listCarLocations.items)
+        // console.log(response.data.listDrivers)
+        setCars(response.data.listDrivers.items)
         //  console.log(response['data']['listCarLocat  ions']['items']);
       }
       catch (e){
@@ -50,9 +50,10 @@ const HomeMap = (props) => {
         longitudeDelta: 0.0121,
       }}>
       {cars.map((car) => (
+        // console.log("53, Cars are ",car.Latitude),
         <Marker
           key={car.id}
-          coordinate={{latitude: car.Latitude, longitude: car.Longitude}}
+          coordinate={{latitude: car?.Latitude, longitude: car?.Longitude}}
         >
           <Image
             style={{width: 70, height: 70, resizeMode: 'contain'}}

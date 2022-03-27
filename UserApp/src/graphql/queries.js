@@ -15,6 +15,7 @@ export const getDriver = /* GraphQL */ `
       Latitude
       Longitude
       IsAvailable
+      Customer_id
       createdAt
       updatedAt
     }
@@ -39,6 +40,7 @@ export const listDrivers = /* GraphQL */ `
         Latitude
         Longitude
         IsAvailable
+        Customer_id
         createdAt
         updatedAt
       }
@@ -75,6 +77,7 @@ export const searchDrivers = /* GraphQL */ `
         Latitude
         Longitude
         IsAvailable
+        Customer_id
         createdAt
         updatedAt
       }
