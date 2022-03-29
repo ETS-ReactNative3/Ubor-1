@@ -7,11 +7,10 @@ const CovidMessage = (props) => {
     return (
         <View style={styles.container}>
            <Text style={styles.title}>
-               Travel only if neccessary
+               Ubor App
            </Text>
            <Text style={styles.text}>
-               Covid BS.
-               Flatten the curve and shit.
+               This project uses React-Native and AWS Amplify 
            </Text>
            <Text style={styles.learnMore}>
                Learn More
