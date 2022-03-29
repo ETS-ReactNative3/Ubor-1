@@ -31,7 +31,7 @@ const HomeScreen = () => {
   const [car,setCar] = useState(null);
   const [myPosition, setMyPosition] = useState(null);
   const [order, setOrder] = useState(null)
-  const [distanceCal,setDistanceCal] = useState(7);
+  const [distanceCal,setDistanceCal] = useState(12);
   const [newOrders, setNewOrders] = useState([{
     id: '1',
     type: 'UberX',
