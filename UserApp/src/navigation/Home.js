@@ -1,10 +1,8 @@
 import React from "react";
-import {View, Text} from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import SearchResults from '../screens/SearchResults';
-import HomeScreen from '../screens/HomeScreen';
-import DestinationSearch from '../screens/DestinationPage';
+import SearchResults from '../screens/UserSearchResults';
+import HomeScreen from '../screens/InitialScreen';
+import DestinationSearch from '../screens/FinalDestinationPage';
 
 
 const HomeNavigator = (props) => {

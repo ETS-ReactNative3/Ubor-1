@@ -1,9 +1,9 @@
 import React,{useState,useEffect} from 'react';
 import {View, Dimensions} from 'react-native';
-import RouteMap from "../../components/RouteMap";
+import RouteMap from "../../components/DirectionMap";
 import {API,graphqlOperation} from 'aws-amplify';
 import {createCustomerLocationDestination} from '../../graphql/mutations'
-import UberTypes from "../../components/UberTypes";
+import UberTypes from "../../components/CarType";
 import { useRoute } from '@react-navigation/native';
 import { Auth } from 'aws-amplify';
 const SearchResults = (props) => {

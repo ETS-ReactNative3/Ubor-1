@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Pressable } from "react-native";
 import styles from './styles.js';
-import UberTypeRow from '../UberTypeRow';
+import UberTypeRow from '../CarTypeRowRender';
 
 import typesData from '../../assets/data/types';
 
@@ -10,7 +10,7 @@ const UberTypes = ({typeState,onSubmit}) => {
   // const confirm = () => {
   //   console.warn('confirm');
   // };
-
+  
   return (
     <View>
       {typesData.map((type,key) => (

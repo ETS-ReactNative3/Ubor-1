@@ -4,9 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import HomeNavigator from './Home'
-import { Auth } from "aws-amplify";
 // import HomeNavigator from "./Home";
-import HomeScreen from '../screens/HomeScreen';
 import CustomDrawer from "./CustomDrawer";
 
 const Drawer = createDrawerNavigator();
