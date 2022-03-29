@@ -5,6 +5,13 @@ import { View, Image, Text,Pressable } from "react-native";
 import React from "react";
 import { View, Image, Text,Pressable } from "react-native";
 
+/** 
+ * This component is responsible getting the destination of the order
+ * It helps keep a style on that page so it is clear and a clean UI
+ * Also shows the time and distance.
+ * The styles are contains within styles.js in this directory.
+*/
+
 const getDestination =  (newOrder) => {
 
     <View style={{ alignItems: 'center' }}>

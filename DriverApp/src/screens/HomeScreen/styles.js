@@ -1,5 +1,9 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
+
+  /** 
+ * This file holds the styling information index.js uses
+*/
 const styles = StyleSheet.create({
   bottomContainer: {
     height: 100,

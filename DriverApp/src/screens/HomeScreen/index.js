@@ -16,6 +16,15 @@ import { Auth } from "aws-amplify";
 import { updateCustomerLocationDestination } from "../../graphql/mutations.js";
 import {getDistance} from 'geolib'
 
+/** 
+ * This file contains multiple functions on the driver side
+ * The styles are contains within styles.js in this directory.
+*/
+
+
+/** 
+ * This component sets the state, position, new orders and distance values 
+*/
 
 
 const HomeScreen = () => {
@@ -53,6 +62,7 @@ const HomeScreen = () => {
       name: 'Rahat',
     }
   }])
+
 
   const fetchCar = async () =>{
     const userInfo = await Auth.currentUserInfo();
@@ -226,6 +236,11 @@ const HomeScreen = () => {
     }
   }
 
+
+  /** 
+ * This component renders the bottom title and some distance info and the main driver side ui as well
+ * It also shows the staus such as online or offline etc
+*/
   const renderBottomTitle = () => {
     if (order && order.isFinished) {
       return (

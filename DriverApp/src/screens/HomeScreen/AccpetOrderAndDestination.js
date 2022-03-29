@@ -1,6 +1,13 @@
 import React from "react";
 import { View, Image, Text,Pressable } from "react-native";
 
+/** 
+ * This component is responsible for the order hadling on the driver side
+ * Also shows the order location with lat and long 
+ * and checks for orders
+ * The styles are contains within styles.js in this directory.
+*/
+
 const orderHandling =  (newOrder) => {
 
     <View style={{ alignItems: 'center' }}>

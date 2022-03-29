@@ -4,6 +4,15 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import styles from './styles.js';
 
+
+/** 
+ * This component is responsible for the order popup on the driver side
+ * It helps keep a style on that page so it is clear and a clean UI
+ * Also shows the time and distance.
+ * It also displays the app info.
+ * The styles are contains within styles.js in this directory.
+*/
+
 const NewOrderPopup = ({ newOrder, onAccept, onDecline, duration, distance }) => {
 
   return (

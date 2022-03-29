@@ -3,6 +3,12 @@ import { View, Text, Dimensions, Pressable } from "react-native";
 
 import styles from './styles.js'
 
+/** 
+ * This component is responsible for the order acceptance button on the driver side
+ * Contains function to accept and decline orders
+
+ * The styles are contains within styles.js in this directory.
+*/
 
 const HomeScreen = () => {
   const [car,setCar] = useState(null);

@@ -1,4 +1,7 @@
 import { StyleSheet } from 'react-native';
+/** 
+ * Contains the styles that index.js uses
+*/
 
 const styles = StyleSheet.create({
   root: {
