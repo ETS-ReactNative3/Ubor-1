@@ -40,10 +40,6 @@ const HomeMap = (props) => {
     if (type === 'UberX') {
       return require('../../assets/images/top-UberX.png');
     }
-    if (type === 'Comfort') {
-      return require('../../assets/images/top-Comfort.png');
-    }
-    return require('../../assets/images/top-UberXL.png');
   };
 
   return (

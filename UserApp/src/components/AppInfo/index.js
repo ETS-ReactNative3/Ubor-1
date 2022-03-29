@@ -11,7 +11,7 @@ import styles from './styles';
  * a container, title, text and more css elements.
 */
 
-const CovidMessage = (props) => {
+const AppInfo = (props) => {
     return (
         <View style={styles.container}>
            <Text style={styles.title}>
@@ -27,4 +27,4 @@ const CovidMessage = (props) => {
     );
 }
 
-export default CovidMessage
+export default AppInfo
