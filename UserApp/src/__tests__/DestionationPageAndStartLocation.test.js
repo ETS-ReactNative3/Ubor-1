@@ -1,7 +1,7 @@
 
 import React from 'react';
-import {submitDest} from '../screens/DestinationPage/DestinationPage'
-import {submitStart}  from '../screens/DestinationPage/StartLocationPage'
+import {submitDest} from '../screens/FinalDestinationPage/DestinationPage'
+import {submitStart}  from '../screens/FinalDestinationPage/StartLocationPage'
 
 
 //SubmitingValidDestinationTest()

@@ -1,5 +1,5 @@
 import React from 'react';
-import UberTypeRow from '../components/UberTypeRow/UberTypeRow';
+import UberTypeRow from '../components/CarTypeRowRender/UberTypeRow';
 
 //EstimatedPriceTest1()
 test('Viewing estimated price for id 0', () => {
