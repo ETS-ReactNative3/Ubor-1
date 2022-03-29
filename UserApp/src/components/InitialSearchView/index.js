@@ -8,6 +8,11 @@ import { useNavigation } from "@react-navigation/native";
 
 import styles from './styles.js';
 
+/**
+ * This component is input for where you want to go to.
+ * You put your destination or home destinations or other
+ * destination into the search bar.
+ */
 const HomeSearch = (props) => {
   const navigation = useNavigation();
   const goToSearch = () => {

@@ -5,6 +5,10 @@ import styles from './styles.js';
 
 // import typesData from '../../assets/data/types';
 
+/**
+ * This component helps with confirmation and and non confirmation.
+ * It also helps dispplay the cars.
+ */
 const UberTypes = (confirm) => {
 //   const [selectedType, status] = confirm;
   const selectedType = confirm.selectedType;

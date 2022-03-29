@@ -2,6 +2,10 @@ import React from "react";
 import { View, Image, Text,Pressable } from "react-native";
 import { StyleSheet } from 'react-native';
 
+/**
+ * This component is helps with the actual car option display component in the index.js
+ * It also helps display the prices and helps with some stying components to the main component.
+ */
 const UberTypeRow = (props) => {
   const {type} = props;
     <Pressable  

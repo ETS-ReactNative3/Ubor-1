@@ -5,6 +5,12 @@ import UberTypeRow from '../CarTypeRowRender';
 
 import typesData from '../../assets/data/types';
 
+/**
+ * This component involves selecting the uber type that you want. 
+ * There are a few types, and the user picks the type, and that gets selected here
+ * and then the type sets for that user. There is also text saying confirm uber.
+ * It uses the UberTypeRow component to map the cars.
+ */
 const UberTypes = ({typeState,onSubmit}) => {
   const [selectedType,setselectedType] = typeState;
   // const confirm = () => {

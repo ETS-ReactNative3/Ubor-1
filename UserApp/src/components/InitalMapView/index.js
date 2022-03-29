@@ -6,6 +6,14 @@ import {API, graphqlOperation} from 'aws-amplify';
 import {listDrivers} from '../../graphql/queries';
 // import cars from '../../assets/data/cars';
 
+/**
+ *  This component is the main map on the first screen, and it helps set cars on the map.
+ * The graphql call helps to list the drivers on to the map 
+ * depending on their location. The initial part helps render
+ * the cars onto the map and it also fetches images of the
+ * car types and displays it. 
+ * 
+ */ 
 const HomeMap = (props) => {
 	const [cars,setCars] = useState([]);
   useEffect(()=>{

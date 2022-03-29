@@ -5,6 +5,15 @@ import MapViewDirections from 'react-native-maps-directions';
 
 const GOOGLE_MAPS_APIKEY = 'AIzaSyA5VWIifqHFf9PuEpxXUUr72KgJa7lbQek';
 
+/**
+ * This component uses the google API and obtains
+ * information on the components of the map like
+ * longitutde, latitude,  and original location and destinations.
+ * It contains the API key for google map too
+ * and contains some styling. It marks the original and destination locations
+ * on the map, hence the two marker components
+ */
+
 const RouteMap = ({originProp, destinationProp}) => {
 
   const originLoc = {

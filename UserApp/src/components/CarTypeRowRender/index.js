@@ -4,6 +4,12 @@ import styles from './styles.js';
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 
+/**
+ * This component is the actual car option display component which
+ * gets mapped in confirmuber.js. It fetches the images of the uber
+ * car types and gives it styling and elements which get mapped and displayed
+ * on another component.
+ */
 const UberTypeRow = (props) => {
   const {type,onPress,isSelected} = props;
 
