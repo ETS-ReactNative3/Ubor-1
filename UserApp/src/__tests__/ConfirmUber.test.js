@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Confirm from '../components/UberTypes/ConfirmUber'
+import Confirm from '../components/CarType/ConfirmUber'
 
 //ConfirmingUberTest();
 test('confirming uber', () => {
