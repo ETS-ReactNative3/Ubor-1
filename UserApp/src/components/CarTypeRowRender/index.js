@@ -17,10 +17,6 @@ const UberTypeRow = (props) => {
     if (type.type === 'UberX') {
       return require('../../assets/images/UberX.jpeg');
     }
-    if (type.type === 'Comfort') {
-      return require('../../assets/images/Comfort.jpeg');
-    }
-    return require('../../assets/images/UberXL.jpeg');
   }
 
   return (
@@ -37,7 +33,7 @@ const UberTypeRow = (props) => {
 
       <View style={styles.middleContainer}>
         <Text style={styles.type}>
-          {type.type}{' '}
+          {'Ubor Car'}{' '}
           <Ionicons name={'person'} size={16} />
           3
         </Text>
