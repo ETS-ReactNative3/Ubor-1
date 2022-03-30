@@ -13,3 +13,6 @@ To run the project on a computer can be hard as the application is configured to
 
 6. After configuring, building, and then downloading the application onto the emulator, the emulator should then run and the application can be tested. 
 
+Various tutorials, guides and websites were used to achieve the final result.
+References:
+
