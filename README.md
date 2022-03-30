@@ -1,4 +1,4 @@
-# Ubor
+# Welcome to the Ubor App!
 To run the project on a computer can be hard as the application is configured to be able to run on Android devices. However, it is still possible to run the application on computers. To do so, the following steps need to be followed:
 
 1. Download Android Studio and Node.js to properly run the application. Android Studio provides the tools to emulate Android devices and Node.js is used to run the application.
