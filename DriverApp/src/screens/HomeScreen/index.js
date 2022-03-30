@@ -352,17 +352,7 @@ const HomeScreen = () => {
         <FontAwesome name={"sign-out"} size={24} color="#4a4a4a"/>
       </Pressable>
 
-      <Pressable
-        onPress={() => console.warn('Hey')}
-        style={[styles.roundButton, {bottom: 110, left: 10}]}>
-        <Entypo name={"menu"} size={24} color="#4a4a4a"/>
-      </Pressable>
-
-      <Pressable
-        onPress={() => console.warn('Hey')}
-        style={[styles.roundButton, {bottom: 110, right: 10}]}>
-        <Entypo name={"menu"} size={24} color="#4a4a4a"/>
-      </Pressable>
+     
 
       <Pressable
         onPress={onGoPress}
@@ -373,9 +363,7 @@ const HomeScreen = () => {
       </Pressable>
 
       <View style={styles.bottomContainer}>
-        <Ionicons name={"options"} size={30} color="#4a4a4a"/>
           {renderBottomTitle()}
-        <Entypo name={"menu"} size={30} color="#4a4a4a" />
       </View>
 
 
