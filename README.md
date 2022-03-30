@@ -27,3 +27,23 @@ https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html
 Learn the Basics. (n.d.). React Native. Retrieved February 10, 2022 from
 https://reactnative.dev/docs/tutorial
 
+Setting up the development environment. (n.d.). React Native. Retrieved _ from 
+https://reactnative.dev/docs/environment-setup
+
+react-native-maps. (n.d.). Github. Retrieved _ from
+https://github.com/react-native-maps/react-native-maps
+
+Martin Miauro. (2021, June 17). MapView in Expo/React Native. Medium. Retrieved _ from
+https://medium.com/geekculture/mapview-in-expo-react-native-5aa69eb81519
+
+Google Maps Search Component for React Native. (n.d.). Neatly Packaged Modules. Retrieved _ from
+https://www.npmjs.com/package/react-native-google-places-autocomplete
+
+react-native-maps-directions. (n.d.). Github. Retrieved _ from
+https://github.com/bramus/react-native-maps-directions
+
+Getting started with Lambda. (n.d.). AWS. Retrieved _ from
+https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html
+
+Amazon Cognito tutorials. (n.d.). AWS. Retrieved _ from
+https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html
