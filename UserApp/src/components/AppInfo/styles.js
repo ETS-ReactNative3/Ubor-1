@@ -4,24 +4,24 @@ const styles = StyleSheet.create(
     {
         container: {
             backgroundColor: '#1065e9',
-            padding: 10,
-            borderTopLeftRadius: 10,
-            borderTopRightRadius: 10,
+            padding: 11,
+            borderTopLeftRadius: 12,
+            borderTopRightRadius: 11,
         },
         title: {
             color: 'white',
-            fontSize: 20,
+            fontSize: 21,
             fontWeight: 'bold',
-            marginBottom: 10,
+            marginBottom: 11,
         },
         text: {
             color: '#bed9ff',
-            fontSize: 15,
-            marginBottom: 10,
+            fontSize: 16,
+            marginBottom: 12,
         },
         learnMore: {
             color: 'white',
-            fontSize: 15,
+            fontSize: 14,
             fontWeight: 'bold',
             
         }

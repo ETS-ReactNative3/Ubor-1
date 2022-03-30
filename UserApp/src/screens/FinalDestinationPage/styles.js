@@ -6,10 +6,10 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   textInput: {
-    padding: 10,
+    padding: 11,
     backgroundColor: '#eee',
-    marginVertical: 5,
-    marginLeft: 20,
+    marginVertical: 6,
+    marginLeft: 22,
   },
 
   separator: {
@@ -18,25 +18,25 @@ const styles = StyleSheet.create({
   },
   listView: {
     position: 'absolute',
-      top: 105,
+      top: 107,
   },
   autocompleteContainer: {
     position: 'absolute',
     top: 0,
-    left: 10,
-    right: 10,
+    left: 12,
+    right: 12,
   },
 
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 10,
+    marginVertical: 12,
   },
   iconContainer: {
     backgroundColor: '#a2a2a2',
     padding: 5,
-    borderRadius: 50,
-    marginRight: 15,
+    borderRadius: 60,
+    marginRight: 17,
   },
   locationText: {
 
@@ -47,9 +47,9 @@ const styles = StyleSheet.create({
     height: 5,
     backgroundColor: 'black',
     position: 'absolute',
-    top: 20,
-    left: 15,
-    borderRadius: 5,
+    top: 22,
+    left: 17,
+    borderRadius: 7,
   },
   line: {
     width: 1,

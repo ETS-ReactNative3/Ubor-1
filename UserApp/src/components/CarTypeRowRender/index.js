@@ -25,7 +25,6 @@ const UberTypeRow = (props) => {
 
     >
 
-      {/*  Image */}
       <Image
         style={styles.image}
         source={getImage()}
@@ -37,12 +36,10 @@ const UberTypeRow = (props) => {
           <Ionicons name={'person'} size={16} />
           3
         </Text>
-        <Text style={styles.time}>
-          8:30PM drop off
-        </Text>
+        
       </View>
       <View style={styles.rightContainer}>
-        <Ionicons name={'pricetag'} size={18} color={'#42d742'} />
+       
         <Text style={styles.price}> ${type.price}</Text>
       </View>
     </Pressable>

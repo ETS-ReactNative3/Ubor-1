@@ -5,13 +5,13 @@ const styles = StyleSheet.create(
         inputBox: {
             backgroundColor: '#d9d9d9',
             margin: 10,
-            padding: 10,
+            padding: 12,
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center'
         },
         inputText: {
-            fontSize: 20,
+            fontSize: 18,
             color: '#434343',
             fontWeight: '600',
         },
@@ -20,12 +20,12 @@ const styles = StyleSheet.create(
             width: 100,
             justifyContent: 'space-between',
             backgroundColor: 'white',
-            padding: 10,
-            borderRadius: 50
+            padding: 12,
+            borderRadius: 60
         },
         row: {
             flexDirection: 'row',
-            padding: 20,
+            padding: 22,
             alignItems: 'center',
             borderBottomWidth: 1,
             borderColor: 'grey'
