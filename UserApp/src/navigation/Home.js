@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from '@react-navigation/stack'
 import SearchResults from '../screens/UserSearchResults';
 import HomeScreen from '../screens/InitialScreen';
-import DestinationSearch from '../screens/FinalDestinationPage';
+import FinalDestinationPage from '../screens/FinalDestinationPage';
 
 
 const HomeNavigator = (props) => {
@@ -13,7 +13,7 @@ const HomeNavigator = (props) => {
         headerShown: false,
       }}>
      <Stack.Screen name={"Home"} component={HomeScreen} />
-      <Stack.Screen name={"DestinationSearch"} component={DestinationSearch} />
+      <Stack.Screen name={"DestinationSearch"} component={FinalDestinationPage} />
       <Stack.Screen name={"SearchResults"} component={SearchResults} />
      </Stack.Navigator> 
   );

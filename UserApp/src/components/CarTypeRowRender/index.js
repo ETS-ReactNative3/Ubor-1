@@ -21,7 +21,7 @@ const UberTypeRow = (props) => {
 
   return (
     <Pressable onPress={onPress} 
-    style={[styles.container, {backgroundColor: isSelected ? '#efefef' : 'white' }]}
+    style={[styles.container, {backgroundColor: isSelected ? 'grey' : 'white' }]}
 
     >
 
@@ -38,12 +38,12 @@ const UberTypeRow = (props) => {
           3
         </Text>
         <Text style={styles.time}>
-          8:03PM drop off
+          8:30PM drop off
         </Text>
       </View>
       <View style={styles.rightContainer}>
         <Ionicons name={'pricetag'} size={18} color={'#42d742'} />
-        <Text style={styles.price}>est. ${type.price}</Text>
+        <Text style={styles.price}> ${type.price}</Text>
       </View>
     </Pressable>
   );

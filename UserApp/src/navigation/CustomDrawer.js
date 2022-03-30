@@ -50,17 +50,10 @@ const  [User,setUser]=useState();
           </Pressable>
         </View>
 
-        { /* Do more */}
-        <Pressable
-          onPress={() => {console.warn('Make Money Driving')}}>
-          <Text style={{color: '#dddddd', paddingVertical: 5,}}>Do more with your account</Text>
-        </Pressable>
-
         {/* Make money */}
         <Pressable onPress={() => {console.warn('Make Money Driving')}}>
           <Text style={{color: 'white', paddingVertical: 5}}>Make money driving</Text>
         </Pressable>
-
 
       </View>
 
