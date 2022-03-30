@@ -46,3 +46,9 @@ https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html
 
 Amazon Cognito tutorials. (n.d.). AWS. Retrieved March 23, 2022 from  
 https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html
+
+Mahdi Sharifimehr. React Native Tutorial #32 (2021) - Testing with Jest and React Test Renderer. (2021, July 12). Youtube. Retrieved March 25, 2022 from  
+https://www.youtube.com/watch?v=bOJkNut1Qyo
+
+Testing React Native Apps. (n.d.). JEST. Retrieved March 25, 2022 from  
+https://jestjs.io/docs/tutorial-react-native
