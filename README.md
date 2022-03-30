@@ -17,12 +17,6 @@ To run the project on a computer can be hard as the application is configured to
 Various tutorials, guides and websites were used to achieve the final result.
 
 References:  
-Getting started. (n.d.). Amplify. Retrieved March 21, 2022 from  
-https://docs.amplify.aws/start/q/integration/react-native/
-
-Designing a GraphQL API. (n.d.). AWS. Retrieved March 24, 2022 from  
-https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html
-
 Learn the Basics. (n.d.). React Native. Retrieved February 2, 2022 from  
 https://reactnative.dev/docs/tutorial
 
@@ -40,6 +34,12 @@ https://www.npmjs.com/package/react-native-google-places-autocomplete
 
 react-native-maps-directions. (n.d.). Github. Retrieved Retrieved February 15, 2022 from  
 https://github.com/bramus/react-native-maps-directions
+
+Getting started. (n.d.). Amplify. Retrieved March 21, 2022 from  
+https://docs.amplify.aws/start/q/integration/react-native/
+
+Designing a GraphQL API. (n.d.). AWS. Retrieved March 24, 2022 from  
+https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html
 
 Getting started with Lambda. (n.d.). AWS. Retrieved March 23, 2022 from  
 https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html
