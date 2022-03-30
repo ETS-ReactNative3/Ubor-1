@@ -18,7 +18,7 @@ Various tutorials, guides and websites were used to achieve the final result.
 
 References:
 
-Getting started. (n.d.). Amplify. Retrieved March 21, 2022 from
+Getting started. (n.d.). Amplify. Retrieved March 21, 2022 from  
 https://docs.amplify.aws/start/q/integration/react-native/
 
 Designing a GraphQL API. (n.d.). AWS. Retrieved March 24, 2022 from
