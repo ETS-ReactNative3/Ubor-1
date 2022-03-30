@@ -15,6 +15,7 @@ To run the project on a computer can be hard as the application is configured to
 
 
 Various tutorials, guides and websites were used to achieve the final result.
+Some of them are given below:
 
 References:  
 Learn the Basics. (n.d.). React Native. Retrieved February 2, 2022 from  
