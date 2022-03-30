@@ -16,8 +16,7 @@ To run the project on a computer can be hard as the application is configured to
 
 Various tutorials, guides and websites were used to achieve the final result.
 
-References:
-
+References:  
 Getting started. (n.d.). Amplify. Retrieved March 21, 2022 from  
 https://docs.amplify.aws/start/q/integration/react-native/
 
