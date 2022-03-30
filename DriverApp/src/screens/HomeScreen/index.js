@@ -341,26 +341,28 @@ const HomeScreen = () => {
       </Pressable>
 
       <Pressable
-        onPress={() => console.warn('Hey')}
-        style={[styles.roundButton, {top: 10, left: 10}]}>
-        <Entypo name={"menu"} size={24} color="#4a4a4a"/>
+              onPress={onGoPress}
+              style={styles.goButton}>
+              <Text style={styles.goText}>
+                {car?.IsAvailable ? 'END' : 'GO'}
+              </Text>
       </Pressable>
 
       <Pressable
         onPress={() => {Auth.signOut()}}
         style={[styles.roundButton, {top: 10, right: 10}]}>
-        <FontAwesome name={"sign-out"} size={24} color="#4a4a4a"/>
+        <FontAwesome name={"sign-out"} size={35} color="#4a4a4a"/>
       </Pressable>
 
      
-
+{/* 
       <Pressable
         onPress={onGoPress}
         style={styles.goButton}>
         <Text style={styles.goText}>
           {car?.IsAvailable ? 'END' : 'GO'}
         </Text>
-      </Pressable>
+      </Pressable> */}
 
       <View style={styles.bottomContainer}>
           {renderBottomTitle()}
