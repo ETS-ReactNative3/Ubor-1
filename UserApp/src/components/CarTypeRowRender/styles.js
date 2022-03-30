@@ -7,17 +7,17 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   image: {
-    height: 40,
-    width: 80,
+    height: 42,
+    width: 82,
     resizeMode: 'contain',
   },
   middleContainer: {
     flex: 1,
-    marginHorizontal: 10,
+    marginHorizontal: 14,
   },
   type: {
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 19,
     marginBottom: 5,
   },
   time: {
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
   price: {
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 19,
     marginLeft: 5,
   },
 });

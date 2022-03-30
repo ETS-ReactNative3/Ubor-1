@@ -31,11 +31,10 @@ const  [User,setUser]=useState();
 
           <View>
             <Text style={{color: 'white', fontSize: 24}}>{User?.attributes['custom:fname']+' '+User?.attributes['custom:lname']}</Text>
-            <Text style={{color: 'lightgrey'}}>5.00 *</Text>
+            
           </View>
         </View>
 
-        {/* Messages Row */}
         <View style={{
           borderBottomWidth: 1,
           borderBottomColor: '#919191',
@@ -49,12 +48,6 @@ const  [User,setUser]=useState();
             <Text style={{color: '#dddddd', paddingVertical: 5,}}>Messages</Text>
           </Pressable>
         </View>
-
-        {/* Make money */}
-        <Pressable onPress={() => {console.warn('Make Money Driving')}}>
-          <Text style={{color: 'white', paddingVertical: 5}}>Make money driving</Text>
-        </Pressable>
-
       </View>
 
       <DrawerItemList {...props} />

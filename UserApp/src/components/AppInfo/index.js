@@ -20,9 +20,6 @@ const AppInfo = (props) => {
            <Text style={styles.text}>
                This project uses React-Native and AWS Amplify 
            </Text>
-           <Text style={styles.learnMore}>
-               Learn More
-           </Text>
         </View>
     );
 }

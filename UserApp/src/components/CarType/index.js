@@ -13,9 +13,7 @@ import typesData from '../../assets/data/types';
  */
 const UberTypes = ({typeState,onSubmit}) => {
   const [selectedType,setselectedType] = typeState;
-  // const confirm = () => {
-  //   console.warn('confirm');
-  // };
+ 
   
   return (
     <View>
@@ -27,7 +25,7 @@ const UberTypes = ({typeState,onSubmit}) => {
 
       <Pressable onPress={onSubmit} style={{
         backgroundColor: 'black',
-        padding: 10,
+        padding: 12,
         margin: 5,
         alignItems: 'center',
       }}>
