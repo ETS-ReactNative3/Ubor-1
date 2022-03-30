@@ -19,13 +19,13 @@ const styles = StyleSheet.create({
   },
   roundButton: {
     position: 'absolute',
-    backgroundColor: 'white',
+    backgroundColor: 'orange',
     padding: 10,
     borderRadius: 20,
   },
   goButton: {
     position: 'absolute',
-    backgroundColor: '#1495ff',
+    backgroundColor: 'orange',
     width: 75,
     height: 75,
     justifyContent: 'center',
