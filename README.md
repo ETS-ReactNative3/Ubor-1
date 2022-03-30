@@ -24,26 +24,26 @@ https://docs.amplify.aws/start/q/integration/react-native/
 Designing a GraphQL API. (n.d.). AWS. Retrieved March 24, 2022 from
 https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html
 
-Learn the Basics. (n.d.). React Native. Retrieved February 10, 2022 from
+Learn the Basics. (n.d.). React Native. Retrieved February 2, 2022 from
 https://reactnative.dev/docs/tutorial
 
-Setting up the development environment. (n.d.). React Native. Retrieved _ from 
+Setting up the development environment. (n.d.). React Native. Retrieved February 5, 2022 from 
 https://reactnative.dev/docs/environment-setup
 
-react-native-maps. (n.d.). Github. Retrieved _ from
+react-native-maps. (n.d.). Github. Retrieved February 15, 2022 from
 https://github.com/react-native-maps/react-native-maps
 
-Martin Miauro. (2021, June 17). MapView in Expo/React Native. Medium. Retrieved _ from
+Martin Miauro. (2021, June 17). MapView in Expo/React Native. Medium. Retrieved February 15, 2022 from
 https://medium.com/geekculture/mapview-in-expo-react-native-5aa69eb81519
 
-Google Maps Search Component for React Native. (n.d.). Neatly Packaged Modules. Retrieved _ from
+Google Maps Search Component for React Native. (n.d.). Neatly Packaged Modules. Retrieved February 17, 2022 from
 https://www.npmjs.com/package/react-native-google-places-autocomplete
 
-react-native-maps-directions. (n.d.). Github. Retrieved _ from
+react-native-maps-directions. (n.d.). Github. Retrieved Retrieved February 15, 2022 from
 https://github.com/bramus/react-native-maps-directions
 
-Getting started with Lambda. (n.d.). AWS. Retrieved _ from
+Getting started with Lambda. (n.d.). AWS. Retrieved March 23, 2022 from
 https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html
 
-Amazon Cognito tutorials. (n.d.). AWS. Retrieved _ from
+Amazon Cognito tutorials. (n.d.). AWS. Retrieved March 23, 2022 from
 https://docs.aws.amazon.com/cognito/latest/developerguide/tutorials.html
